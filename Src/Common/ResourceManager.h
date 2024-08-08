@@ -62,6 +62,9 @@ public:
 		CAR_5,
 		CAR_6,
 
+		// エフェクト
+		EFFECT_1,
+
 		//CSV
 		STAGE,
 

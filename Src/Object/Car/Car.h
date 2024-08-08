@@ -20,6 +20,9 @@ public:
 	void Draw(void)override;
 	void Release(void)override;
 
+	[[nodiscard]] const STATE& GetState()const { return state_; };
+	[[nodiscard]] const Vector2F& GetMoveDir()const { return moveDir_; };
+
 private:
 
 

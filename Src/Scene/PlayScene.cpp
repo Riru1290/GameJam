@@ -5,6 +5,7 @@
 #include"../Object/Player.h"
 #include"../Object/Stage.h"
 #include "../Object/Car/Car.h"
+#include "../Object/Effect/EffectBase.h"
 #include "../UI/UITime.h"
 #include "../UI/UIApple.h"
 #include"../Utility/Utility.h"
@@ -49,10 +50,10 @@ void PlayScene::Init()
 	stage_->Init();
 
 
-	appleSpawnPos_[0] = { 200.0f,200.0f};
-	appleSpawnPos_[1] = { 1000.0f,500.0f };
-	appleSpawnPos_[2] = { 200.0f,500.0f };
-	appleSpawnPos_[3] = { 1000.0f,200.0f };
+	appleSpawnPos_[0] = { 300.0f,100.0f};
+	appleSpawnPos_[1] = { 600.0f,600.0f };
+	appleSpawnPos_[2] = { 300.0f,600.0f };
+	appleSpawnPos_[3] = { 600.0f,100.0f };
 
 	appleNum_ = 0;
 	for (int i = 0; i < APPLE_NUM_MAX; i++) {
@@ -90,6 +91,49 @@ void PlayScene::Update()
 		shared_ptr<Object> tempCar;
 		tempCar = make_shared<Car>();
 		objects_.emplace_back(tempCar);
+
+		bool isRevXDraw = false;
+		bool isRevYDraw = false;
+		float angle = 0.0f;
+		Vector2F relativePos = {};
+		auto moveDir = dynamic_pointer_cast<Car>(tempCar)->GetMoveDir();
+		if (moveDir.x == 1.0f) {
+			isRevXDraw = true;
+			relativePos = { -150.0f,-5.0f };
+		}
+		else if (moveDir.x == -1.0f) {
+
+			isRevXDraw = false;
+			relativePos = { 150.0f,-5.0f };
+		}
+		else if (moveDir.y == 1.0f) {
+
+			relativePos = { -5.0f,-150.0f };
+			angle = Utility::Deg2RadF(-90.0f);
+		}
+		else if (moveDir.y == -1.0f) {
+
+			relativePos = { 5.0f,150.0f };
+			angle = Utility::Deg2RadF(90.0f);
+		}
+
+		// エフェクト
+		shared_ptr<Object> tempSmoke;
+		tempSmoke = make_shared<EffectBase>(
+			true,
+			true,
+			cref(tempCar->GetPosition()),
+			ResourceManager::SRC::EFFECT_1,
+			isRevXDraw,
+			isRevYDraw,
+			tempCar->GetPosition(),
+			angle,
+			tempCar->GetSize(),
+			relativePos,
+			0, 9
+		);
+		objects_.emplace_back(tempSmoke);
+
 	}
 
 	for (auto obj : objects_) {
@@ -112,7 +156,9 @@ void PlayScene::Draw()
 	for (auto& c : cpu_)c->Draw();
 	player_->Draw();
 
-	//sort(objects_,)
+	sort(objects_.begin(), objects_.end(), [](weak_ptr<Object> a, weak_ptr<Object> b) {
+		return a.lock()->GetFootPos() < b.lock()->GetFootPos();
+		});
 
 	for (auto obj : objects_) {
 		obj->Draw();
