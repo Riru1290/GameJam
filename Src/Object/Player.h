@@ -4,6 +4,8 @@ class Player:
 	public CharacterBase
 {
 public:
+	//’è”
+	static constexpr float UNIT_DIR_DEG = 45.0f;
 
 	Player(void);
 	~Player(void)override;

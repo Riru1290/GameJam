@@ -38,6 +38,8 @@ public:
 
 	static constexpr int ROT_UNIT = 45;
 
+
+
 	static constexpr int ROT_TOP=		0;
 	static constexpr int ROT_TOP_RGH =	1;
 	static constexpr int ROT_RGH =		2;
@@ -57,10 +59,11 @@ public:
 	static constexpr int DIR_TOP =		6;
 	static constexpr int DIR_TOP_RGH =	7;
 
+
 	CharacterBase(void);
 	virtual ~CharacterBase(void);
 
-	virtual void Init(void);
+	virtual void Init(int* image);
 	virtual void Update(void);
 	virtual void Draw(void);
 	void Release(void);
@@ -73,7 +76,7 @@ public:
 
 private:
 	void Anim(void);
-	
+
 
 protected:
 

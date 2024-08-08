@@ -1,8 +1,13 @@
 #include "CPUBase.h"
-#include"../Common/Vector2F.h"
-#include"../Utility/Utility.h"
 
 
+CPUBase::CPUBase()
+{
+}
+
+CPUBase::~CPUBase()
+{
+}
 
 void CPUBase::SetParam(void)
 {
