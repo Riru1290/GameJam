@@ -8,6 +8,7 @@
 #include "../Object/Effect/EffectBase.h"
 #include "../UI/UITime.h"
 #include "../UI/UIApple.h"
+#include "../UI/UICountDown.h"
 #include "SceneManager.h"
 #include "PlayScene.h"
 
@@ -30,7 +31,7 @@ void PlayScene::Init()
 
 
 	int playerNum = GetRand(charaImg_.size() - 1);
-
+	lupinNo_ = playerNum;
 	for (int i = 0; i < charaImg_.size(); i++)
 	{
 		if (i != playerNum)
@@ -69,6 +70,9 @@ void PlayScene::Init()
 
 	tempUI = make_shared<UIApple>(cref(GetAppleNum()));
 	UIs_.emplace_back(tempUI);
+
+	tempUI = make_shared<UICountDown>();
+	UIs_.emplace_back(tempUI);
 }
 
 void PlayScene::Update()
@@ -76,6 +80,7 @@ void PlayScene::Update()
 	if (MyTimer.IsEndTimer("GAME_TIME") || 
 		appleNum_ <= 0) {
 		SceneMng.ChangeScene(SCENE_ID::ANSWER);
+		SceneMng.SetLupinNo(lupinNo_);
 	}
 
 	if (MyTimer.IsEndTimer("GAME_START_TIME") &&

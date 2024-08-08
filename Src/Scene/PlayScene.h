@@ -43,5 +43,7 @@ private:
 
 	// 現在残っているアップルの数
 	int appleNum_;
+
+	int lupinNo_;
 };
 

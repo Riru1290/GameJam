@@ -28,6 +28,8 @@
     <ClCompile Include="Src\Object\Stage.cpp" />
     <ClCompile Include="Src\UI\UIApple.cpp" />
     <ClCompile Include="Src\Object\Effect\EffectBase.cpp" />
+    <ClCompile Include="Src\UI\UICountDown.cpp" />
+    <ClCompile Include="Src\UI\UIMove.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Object\Car\Car.h" />
@@ -59,5 +61,7 @@
     <ClInclude Include="Src\Object\Stage.h" />
     <ClInclude Include="Src\UI\UIApple.h" />
     <ClInclude Include="Src\Object\Effect\EffectBase.h" />
+    <ClInclude Include="Src\UI\UICountDown.h" />
+    <ClInclude Include="Src\UI\UIMove.h" />
   </ItemGroup>
 </Project>

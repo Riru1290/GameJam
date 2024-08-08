@@ -58,5 +58,22 @@ public:
 
 	// ’Ç‰Á•ª
 	static bool IsIncludedInArea(float width, float height, Vector2F pos, Vector2F checkPos);
+
+
+
 };
+
+template <typename T>
+concept LerpPossibleType =
+is_same_v<T, int> ||
+is_same_v<T, float> ||
+is_same_v<T, double> ||
+is_same_v<T, Vector2> ||
+is_same_v<T, Vector2F>;
+
+template <LerpPossibleType T>
+static inline T Lerp(T start, T end, float rate)
+{
+	return start + ((end - start) * rate);
+}
 

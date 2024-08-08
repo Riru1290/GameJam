@@ -18,6 +18,9 @@ UITime::~UITime()
 
 		DeleteGraph(imgs_[i]);
 	}
+	DeleteGraph(imgColon_);
+	DeleteGraph(imgTimer_);
+	DeleteGraph(imgFrame_);
 }
 
 

@@ -15,6 +15,13 @@ score_(score.get())
 
 UIApple::~UIApple()
 {
+	for (int i = 0; i < 10; i++) {
+
+		DeleteGraph(imgs_[i]);
+	}
+	DeleteGraph(imgScore_);
+	DeleteGraph(imgApple_);
+	DeleteGraph(imgFrame_);
 }
 
 void UIApple::Draw()

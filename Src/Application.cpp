@@ -2,6 +2,7 @@
 #include <EffekseerForDXLib.h>
 #include "Scene/SceneManager.h"
 #include"Common/ResourceManager.h"
+#include"Common/InputManager.h"
 #include "Application.h"
 
 Application* Application::instance_ = nullptr;
@@ -60,11 +61,14 @@ void Application::Init(void)
 
 void Application::Run(void)
 {
+	auto& input = InputManager::GetInstance();
 
 	// ÉQÅ[ÉÄÉãÅ[Év
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
 		MyTimer.Run();
+
+		input.Update();
 
 		SceneMng.Execute();
 		SceneMng.Draw();

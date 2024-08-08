@@ -18,6 +18,9 @@ public:
 
 	void ChangeScene(SCENE_ID sceneID);
 
+	// ‰ö“”Ô†
+	[[nodiscard]] const int& GetLupinNo()const { return lupinNo_; };
+	void SetLupinNo(int no) { lupinNo_ = no; };
 
 private:
 
@@ -37,5 +40,8 @@ private:
 	void Fade();
 
 	bool isSceneChanging_;
+
+	// ‰ö“”Ô†
+	int lupinNo_;
 };
 
