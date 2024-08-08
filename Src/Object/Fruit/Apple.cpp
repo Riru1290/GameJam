@@ -2,6 +2,7 @@
 
 Apple::Apple()
 {
+	objectID_ = OBJECT_ID::APPLE;
 }
 
 Apple::~Apple()

@@ -1,7 +1,8 @@
 #pragma once
 #include "SceneBase.h"
 
-class Apple;
+class Object;
+class UIBase;
 
 class PlayScene : public SceneBase
 {
@@ -17,6 +18,14 @@ public:
 
 private:
 
-	shared_ptr<Apple> apple_;
+	unordered_map<OBJECT_ID,shared_ptr<Object>> objects_;
+
+	//shared_ptr<Apple> apple_;
+
+	//// ŽÔ
+	//vector<shared_ptr<Car>> cars_;
+
+	// UI
+	vector<shared_ptr<UIBase>> UIs_;
 };
 

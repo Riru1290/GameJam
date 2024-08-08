@@ -9,8 +9,6 @@ public:
 	CPUBase();
 	~CPUBase();
 
-
-
 	void SetParam(void)override;
 	void Move(void)override;
 	

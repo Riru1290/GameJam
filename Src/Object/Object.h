@@ -15,6 +15,8 @@ public:
 	virtual void Draw(void);
 	virtual void Release(void);
 
+	[[nodiscard]] const OBJECT_ID& GetObjectID()const { return objectID_; };
+
 	[[nodiscard]] const Vector2F& GetPosition()const { return pos_; };
 	[[nodiscard]] const float& GetAngle()const { return angle_; };
 	[[nodiscard]] const float& GetSize()const { return size_; };
@@ -30,6 +32,6 @@ protected:
 	float angle_;
 	float size_ = 1.0f;
 
-
+	OBJECT_ID objectID_;
 };
 
