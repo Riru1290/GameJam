@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\ratura3939\ProjectHakoiri\GameHakoiri\GameHakoiri\Src\Common\Fader.cpp" />
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -29,14 +30,21 @@
     </ClCompile>
     <ClCompile Include="Src\Scene\SceneManager.cpp" />
     <ClCompile Include="Src\Utility\Timer.cpp" />
+    <ClCompile Include="Src\Utility\Utility.cpp" />
+    <ClCompile Include="Src\Common\Vector2.cpp" />
+    <ClCompile Include="Src\Common\Vector2F.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\ratura3939\ProjectHakoiri\GameHakoiri\GameHakoiri\Src\Common\Fader.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Scene\SceneID.h" />
     <ClInclude Include="Src\Scene\SceneManager.h" />
     <ClInclude Include="Src\Utility\Timer.h" />
+    <ClInclude Include="Src\Utility\Utility.h" />
+    <ClInclude Include="Src\Common\Vector2.h" />
+    <ClInclude Include="Src\Common\Vector2F.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
