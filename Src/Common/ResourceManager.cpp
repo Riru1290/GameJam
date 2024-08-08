@@ -1,6 +1,7 @@
 ﻿#include"../../pch.h"
 #include "../Application.h"
 #include"../Object/CharacterBase.h"
+#include"../Object/Stage.h"
 #include "Resource.h"
 #include "ResourceManager.h"
 
@@ -76,11 +77,30 @@ void ResourceManager::Init(void)
 	);
 	resourcesMap_.emplace(SRC::CHARACTER_4, move(res));
 	
+
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Image/Stage/tile.png",
+		Stage::TILE_X,
+		Stage::TILE_Y,
+		Stage::TILE_SIZE,
+		Stage::TILE_SIZE
+	);
+	resourcesMap_.emplace(SRC::MAP_TILE, move(res));
 #pragma endregion
 
 
 #pragma region CSV
+		res = make_unique<Resource>(
 
+			Resource::TYPE::CSV,
+
+			"Data/map.csv"
+
+		);
+
+	resourcesMap_.emplace(SRC::STAGE, move(res));
 	
 #pragma endregion
 

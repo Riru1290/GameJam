@@ -19,7 +19,7 @@ public:
 	enum class SRC
 	{
 		//画像
-		
+		MAP_TILE,
 		//キャラクター
 		CHARACTER_1,
 		CHARACTER_2,
@@ -53,6 +53,10 @@ public:
 		CHARACTER_30,
 		CHARACTER_31,
 		CHARACTER_32,
+
+		//CSV
+		STAGE,
+
 		//効果音
 		
 		//BGM

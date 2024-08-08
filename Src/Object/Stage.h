@@ -8,12 +8,16 @@ public:
 	static constexpr int TILE_X = 64;		//タイルの横数
 	static constexpr int TILE_Y = 64;		//タイルの縦数
 
+	Stage();
+	~Stage();
+
 	void Init(void);
 	void Update(void);
 	void Draw(void);
 	void Release(void);
 private:
 
-	int 
+	vector<vector<int>> stageCsv_;
+	int* tile_;
 };
 

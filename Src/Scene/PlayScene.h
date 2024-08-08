@@ -8,6 +8,7 @@ class Player;
 class Apple;
 class Object;
 class UIBase;
+class Stage;
 
 class PlayScene : public SceneBase
 {
@@ -27,6 +28,7 @@ private:
 
 	vector<shared_ptr<CPUBase>> cpu_;
 	shared_ptr<Player> player_;
+	shared_ptr<Stage> stage_;
 	unordered_map<OBJECT_ID,shared_ptr<Object>> objects_;
 
 

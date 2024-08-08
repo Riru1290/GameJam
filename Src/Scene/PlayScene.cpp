@@ -3,6 +3,7 @@
 #include"../Object/CharacterBase.h"
 #include"../Object/CPUBase.h"
 #include"../Object/Player.h"
+#include"../Object/Stage.h"
 #include "../Object/Car/Car.h"
 #include "../UI/UITime.h"
 #include "../UI/UIBase.h"
@@ -43,7 +44,8 @@ void PlayScene::Init()
 			player_->Init(charaImg_[i]);
 		}
 	}
-
+	stage_ = make_shared<Stage>();
+	stage_->Init();
 
 	shared_ptr<Object> apple = make_shared<Apple>();
 	apple->Init();
@@ -106,6 +108,8 @@ void PlayScene::Draw()
 	for (auto UI : UIs_) {
 		UI->Draw();
 	}
+
+	stage_->Draw();
 }
 
 void PlayScene::Release()
