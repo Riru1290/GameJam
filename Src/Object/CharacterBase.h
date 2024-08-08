@@ -1,4 +1,10 @@
 #pragma once
+<<<<<<< HEAD
+=======
+
+#include"../Common/Vector2F.h"
+
+>>>>>>> character-etc
 class CharacterBase
 {
 public:
@@ -35,6 +41,7 @@ public:
 
 	static constexpr int ROT_UNIT = 45;
 
+<<<<<<< HEAD
 	static constexpr int ROT_TOP = 0;
 	static constexpr int ROT_TOP_RGH = 1;
 	static constexpr int ROT_RGH = 2;
@@ -53,6 +60,26 @@ public:
 	static constexpr int DIR_TOP_LFT = 5;
 	static constexpr int DIR_TOP = 6;
 	static constexpr int DIR_TOP_RGH = 7;
+=======
+	static constexpr int ROT_TOP=		0;
+	static constexpr int ROT_TOP_RGH =	1;
+	static constexpr int ROT_RGH =		2;
+	static constexpr int ROT_BTM_RGH =	3;
+	static constexpr int ROT_BTM =		4;
+	static constexpr int ROT_BTM_LFT =	5;
+	static constexpr int ROT_LFT =		6;
+	static constexpr int ROT_TOP_LFT =	7;
+
+	
+	static constexpr int DIR_RGH =		0;
+	static constexpr int DIR_BTM_RGH =	1;
+	static constexpr int DIR_BTM =		2;
+	static constexpr int DIR_BTM_LFT =	3;
+	static constexpr int DIR_LFT =		4;
+	static constexpr int DIR_TOP_LFT =	5;
+	static constexpr int DIR_TOP =		6;
+	static constexpr int DIR_TOP_RGH =	7;
+>>>>>>> character-etc
 
 	CharacterBase(void);
 	virtual ~CharacterBase(void);
@@ -70,7 +97,11 @@ public:
 
 private:
 	void Anim(void);
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> character-etc
 
 protected:
 

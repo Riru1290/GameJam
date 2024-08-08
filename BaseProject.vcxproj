@@ -20,6 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Object\CharacterBase.cpp" />
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Src\Object\CPUBase.cpp" />
+    <ClCompile Include="Src\Object\Player.cpp" />
+>>>>>>> character-etc
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -40,6 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Object\CharacterBase.h" />
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Src\Object\CPUBase.h" />
+    <ClInclude Include="Src\Object\Player.h" />
+>>>>>>> character-etc
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />
