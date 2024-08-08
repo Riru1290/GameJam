@@ -1,4 +1,3 @@
-#include <DxLib.h>
 #include "Application.h"
 
 // WinMainŠÖ”
