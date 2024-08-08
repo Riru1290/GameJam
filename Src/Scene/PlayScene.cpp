@@ -27,7 +27,7 @@ void PlayScene::Init()
 	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
 
 
-	int playerNum = GetRand(charaImg_.size());
+	int playerNum = GetRand(charaImg_.size() - 1);
 
 	for (int i = 0; i < charaImg_.size(); i++)
 	{

@@ -14,6 +14,6 @@ public:
 	void Release(void);
 private:
 
-	int 
+	//int 
 };
 
