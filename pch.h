@@ -7,8 +7,12 @@
 #include <unordered_map>
 #include <chrono>
 
+
 #include <DxLib.h>
 
-#include "Src/Scene/SceneID.h"
-
 using namespace std;
+
+#include "Src/Scene/SceneID.h"
+#include "Src/Utility/Timer.h"
+
+

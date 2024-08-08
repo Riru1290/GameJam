@@ -28,7 +28,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Scene\AnswerScene.cpp" />
+    <ClCompile Include="Src\Scene\PlayScene.cpp" />
+    <ClCompile Include="Src\Scene\SceneBase.cpp" />
     <ClCompile Include="Src\Scene\SceneManager.cpp" />
+    <ClCompile Include="Src\Utility\Fader.cpp" />
     <ClCompile Include="Src\Utility\Timer.cpp" />
     <ClCompile Include="Src\Utility\Utility.cpp" />
     <ClCompile Include="Src\Common\Vector2.cpp" />
@@ -39,8 +43,12 @@
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Src\Scene\AnswerScene.h" />
+    <ClInclude Include="Src\Scene\PlayScene.h" />
+    <ClInclude Include="Src\Scene\SceneBase.h" />
     <ClInclude Include="Src\Scene\SceneID.h" />
     <ClInclude Include="Src\Scene\SceneManager.h" />
+    <ClInclude Include="Src\Utility\Fader.h" />
     <ClInclude Include="Src\Utility\Timer.h" />
     <ClInclude Include="Src\Utility\Utility.h" />
     <ClInclude Include="Src\Common\Vector2.h" />
