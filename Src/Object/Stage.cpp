@@ -29,7 +29,7 @@ void Stage::Draw(void)
 	{
 		for (int x = 0; x < TILE_NOM_X; x++)
 		{
-			int  i = DrawGraph(x * TILE_SIZE, y * TILE_Y, stageCsv_[y][x], true);
+			int  i = DrawGraph(x * TILE_SIZE, y * TILE_Y,tile_[ stageCsv_[y][x]], true);
 		}
 	}
 }
