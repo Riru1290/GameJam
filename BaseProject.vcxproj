@@ -29,6 +29,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Src\Object\Common\Animation2DController.cpp" />
+    <ClCompile Include="Src\Object\CPUBase.cpp" />
     <ClCompile Include="Src\Object\Fruit\Apple.cpp" />
     <ClCompile Include="Src\Scene\AnswerScene.cpp" />
     <ClCompile Include="Src\Scene\PlayScene.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Object\Common\Animation2DController.h" />
+    <ClInclude Include="Src\Object\CPUBase.h" />
     <ClInclude Include="Src\Object\Fruit\Apple.h" />
     <ClInclude Include="Src\Scene\AnswerScene.h" />
     <ClInclude Include="Src\Scene\PlayScene.h" />
