@@ -1,3 +1,4 @@
+#include "../Object/Fruit/Apple.h"
 #include "SceneManager.h"
 #include "PlayScene.h"
 
@@ -10,7 +11,8 @@ void PlayScene::Init()
 	MyTimer.SetTimer("GAME_TIME", 10.0f);
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
 
-	testFruit_ = LoadGraph("Data/Img/Fruit/Apple Red.png");
+	apple_ = make_shared<Apple>();
+	apple_->Init();
 }
 
 void PlayScene::Update()
@@ -23,6 +25,8 @@ void PlayScene::Update()
 		!MyTimer.InProgress("GAME_TIME")) {
 		MyTimer.Start("GAME_TIME");
 	}
+
+	apple_->Update();
 }
 
 void PlayScene::Draw()
@@ -35,7 +39,7 @@ void PlayScene::Draw()
 	DrawFormatString(0, 40, 0xffffff, "GameStartTime : %f", MyTimer.GetTime("GAME_START_TIME"));
 
 
-	DrawGraph(0,0,testFruit_,true);
+	apple_->Draw();
 }
 
 void PlayScene::Release()
@@ -43,5 +47,5 @@ void PlayScene::Release()
 	MyTimer.Delete("GAME_TIME");
 	MyTimer.Delete("GAME_START_TIME");
 
-	DeleteGraph(testFruit_);
+	apple_->Release();
 }

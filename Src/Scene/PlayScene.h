@@ -1,6 +1,8 @@
 #pragma once
 #include "SceneBase.h"
 
+class Apple;
+
 class PlayScene : public SceneBase
 {
 public:
@@ -15,6 +17,6 @@ public:
 
 private:
 
-	int testFruit_;
+	shared_ptr<Apple> apple_;
 };
 
