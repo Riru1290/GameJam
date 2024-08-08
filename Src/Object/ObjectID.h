@@ -2,7 +2,7 @@
 enum class OBJECT_ID
 {
 	PLAYER,
-	MOB,
+	CPU,
 	APPLE,
 	CAR
 };
