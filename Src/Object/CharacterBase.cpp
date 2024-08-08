@@ -1,10 +1,8 @@
-#include<DxLib.h>
+#include"../../pch.h"
 #include"../Application.h"
 #include"../Utility/Utility.h"
 #include"../Manager/ResourceManager.h"
 #include"../Manager/InputManager.h"
-#include"../Manager/SceneManager.h"
-#include"../Manager/Camera.h"
 #include "CharacterBase.h"
 
 CharacterBase::CharacterBase(void)
@@ -41,11 +39,10 @@ void CharacterBase::Update(void)
 
 void CharacterBase::Draw(void)
 {
-	auto cameraPos = SceneManager::GetInstance().GetCamera().GetPos();
 
 	//キャラクター
-	DrawRotaGraph(pos_.x - cameraPos.x,
-		pos_.y - cameraPos.y,
+	DrawRotaGraph(pos_.x,
+		pos_.y,
 		1.0f,
 		0.0 * Utility::DEG2RAD,
 		img_[animIdx_],
