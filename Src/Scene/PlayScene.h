@@ -27,7 +27,7 @@ private:
 
 	vector<shared_ptr<CPUBase>> cpu_;
 	shared_ptr<Player> player_;
-	unordered_map<OBJECT_ID,shared_ptr<Object>> objects_;
+	unordered_map<OBJECT_ID,vector<shared_ptr<Object>>> objects_;
 
 
 	// UI
