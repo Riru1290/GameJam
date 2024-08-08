@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Object\CharacterBase.cpp" />
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -38,6 +39,7 @@
     <ClCompile Include="Src\Common\Vector2F.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Object\CharacterBase.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />
