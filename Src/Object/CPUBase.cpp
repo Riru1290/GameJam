@@ -1,4 +1,6 @@
 #include "CPUBase.h"
+#include"../Common/Vector2F.h"
+#include"../Utility/Utility.h"
 
 void CPUBase::Move(void)
 {
