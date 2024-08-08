@@ -1,4 +1,7 @@
 #pragma once
+#include "../Common/Vector2.h"
+#include "../Common/Vector2F.h"
+
 class Utility
 {
 public:

@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ratura3939\ProjectHakoiri\GameHakoiri\GameHakoiri\Src\Common\Fader.cpp" />
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
     <ClCompile Include="pch.cpp">
@@ -39,7 +38,6 @@
     <ClCompile Include="Src\Common\Vector2F.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\ratura3939\ProjectHakoiri\GameHakoiri\GameHakoiri\Src\Common\Fader.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
     <ClInclude Include="pch.h" />

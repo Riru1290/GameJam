@@ -14,5 +14,6 @@ using namespace std;
 
 #include "Src/Scene/SceneID.h"
 #include "Src/Utility/Timer.h"
+#include "Src/Utility/Utility.h"
 
 
