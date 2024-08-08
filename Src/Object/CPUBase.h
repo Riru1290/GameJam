@@ -1,7 +1,8 @@
 #pragma once
 #include"../../pch.h"
+#include"CharacterBase.h"
 
-class CPUBase
+class CPUBase:public CharacterBase
 {
 public:
 	void Move(void);
