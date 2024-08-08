@@ -11,6 +11,9 @@ CPUBase::~CPUBase()
 
 void CPUBase::SetParam(void)
 {
+	speed_ = 2.0f;
+	moveLimit_ = 80;
+	DecideDir();
 }
 
 void CPUBase::Move(void)
