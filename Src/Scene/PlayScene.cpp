@@ -7,6 +7,7 @@
 #include "../Object/Car/Car.h"
 #include "../UI/UITime.h"
 #include "../UI/UIApple.h"
+#include"../Utility/Utility.h"
 #include "SceneManager.h"
 #include "PlayScene.h"
 
@@ -94,6 +95,8 @@ void PlayScene::Update()
 	for (auto obj : objects_) {
 		obj->Update();
 	}
+
+	CheckNearFruit();
 }
 
 void PlayScene::Draw()
@@ -126,7 +129,7 @@ void PlayScene::Release()
 {
 	MyTimer.Delete("GAME_TIME");
 	MyTimer.Delete("GAME_START_TIME");
-
+	StopJoypadVibration(DX_INPUT_PAD1, -1);
 
 	for (auto& c : cpu_)c->Release();
 	player_->Release();
@@ -135,4 +138,17 @@ void PlayScene::Release()
 	}
 
 	objects_.clear();
+}
+
+void PlayScene::CheckNearFruit(void)
+{
+	bool ret = false;
+	for (auto& app : appleSpawnPos_)
+	{
+		auto diff = Utility::Distance(player_->GetPos().ToVector2(), app.ToVector2());
+		if (diff < APPLE_COL)ret = true;
+	}
+
+	if(ret)player_->SetNearFruit(true);
+	else player_->SetNearFruit(false);
 }

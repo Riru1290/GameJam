@@ -1,5 +1,4 @@
 #include "CharacterBase.h"
-#include"../Application.h"
 #include"../Utility/Utility.h"
 #include "CharacterBase.h"
 
@@ -35,6 +34,7 @@ void CharacterBase::Update(void)
 {
 	SetPrevPos(pos_);
 	Move();
+	MoveOut();
 	Anim();
 }
 
@@ -151,6 +151,14 @@ void CharacterBase::ResetAnim(DIR dir)
 
 void CharacterBase::Move(void)
 {
+}
+
+void CharacterBase::MoveOut(void)
+{
+	if (pos_.x > SCREEN_SIZE_X)pos_.x = 0.0f;
+	if (pos_.x < 0.0f)pos_.x = SCREEN_SIZE_X;
+	if (pos_.y > SCREEN_SIZE_Y)pos_.y = 0.0f;
+	if (pos_.y < 0.0f)pos_.y = SCREEN_SIZE_Y;
 }
 
 void CharacterBase::SetDir(DIR dir)
