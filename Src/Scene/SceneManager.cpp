@@ -78,6 +78,7 @@ void SceneManager::DoChangeScene()
 		scene_.reset(new AnswerScene());
 		break;
 	}
+	scene_->Init();
 }
 
 void SceneManager::Fade()
