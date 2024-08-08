@@ -39,26 +39,38 @@ void UITime::Draw()
 	DrawRotaGraph(tData.x, tData.y, size_ * 1.5f, angle_, imgTimer_, true);
 
 	float time = MyTimer.GetTime("GAME_TIME");
+
+	float offsetSize = 0.0f;
+
+	if (time < 5.0f) {
+		offsetSize = ((sinf(time * 5.0f)) + 1.0f) / 4.0f;
+	}
+
+
 	// •ª
 	int mini = (int)(time / 60.0f);
 
 	data -= {30.0f, 0.0f};
 	//DrawRotaGraph(data.x, data.y, size_, angle_, imgs_[mini / 10], true);
 	//data += offset;
-	DrawRotaGraph(data.x, data.y, size_ * 0.5f, angle_, imgs_[mini % 10], true);
+
+
+
+
+	DrawRotaGraph(data.x, data.y, (size_ + offsetSize) * 0.5f, angle_, imgs_[mini % 10], true);
 	data += offset;
 
 
 	// ƒRƒƒ“
 	Vector2F cData = data;
-	DrawRotaGraph(cData.x, cData.y, size_ * 0.5f, angle_, imgColon_, true);
+	DrawRotaGraph(cData.x, cData.y, (size_ + offsetSize) * 0.5f, angle_, imgColon_, true);
 	data += offset;
 
 	int sec = (int)(time - (float)mini * 60.0f);
 
-	DrawRotaGraph(data.x, data.y, size_ * 0.5f, angle_, imgs_[sec / 10], true);
+	DrawRotaGraph(data.x, data.y, (size_ + offsetSize) * 0.5f, angle_, imgs_[sec / 10], true);
 	data += offset;
-	DrawRotaGraph(data.x, data.y, size_ * 0.5f, angle_, imgs_[sec % 10], true);
+	DrawRotaGraph(data.x, data.y, (size_ + offsetSize) * 0.5f, angle_, imgs_[sec % 10], true);
 	data += offset;
 
 
