@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Object\Car\Car.cpp" />
+    <ClCompile Include="Src\Common\InputManager.cpp" />
     <ClCompile Include="Src\Object\CharacterBase.cpp" />
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
@@ -33,6 +34,7 @@
     <ClCompile Include="Src\Object\CPUBase.cpp" />
     <ClCompile Include="Src\Object\Fruit\Apple.cpp" />
     <ClCompile Include="Src\Object\Object.cpp" />
+    <ClCompile Include="Src\Object\Player.cpp" />
     <ClCompile Include="Src\Scene\AnswerScene.cpp" />
     <ClCompile Include="Src\Scene\PlayScene.cpp" />
     <ClCompile Include="Src\Scene\SceneBase.cpp" />
@@ -47,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Object\Car\Car.h" />
+    <ClInclude Include="Src\Common\InputManager.h" />
     <ClInclude Include="Src\Object\CharacterBase.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
@@ -55,6 +58,7 @@
     <ClInclude Include="Src\Object\CPUBase.h" />
     <ClInclude Include="Src\Object\Fruit\Apple.h" />
     <ClInclude Include="Src\Object\Object.h" />
+    <ClInclude Include="Src\Object\Player.h" />
     <ClInclude Include="Src\Object\ObjectID.h" />
     <ClInclude Include="Src\Scene\AnswerScene.h" />
     <ClInclude Include="Src\Scene\PlayScene.h" />

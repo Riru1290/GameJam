@@ -18,11 +18,30 @@
     <ClCompile Include="Src\Utility\Utility.cpp" />
     <ClCompile Include="Src\Common\Vector2.cpp" />
     <ClCompile Include="Src\Common\Vector2F.cpp" />
+    <ClCompile Include="Src\Object\Player.cpp" />
+    <ClCompile Include="Src\Common\InputManager.cpp" />
+    <ClCompile Include="Src\Object\CharacterBase.cpp" />
+    <ClCompile Include="Src\Application.cpp" />
+    <ClCompile Include="Src\main.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Src\Object\Common\Animation2DController.cpp" />
+    <ClCompile Include="Src\Object\CPUBase.cpp" />
+    <ClCompile Include="Src\Object\Fruit\Apple.cpp" />
+    <ClCompile Include="Src\Object\Object.cpp" />
+    <ClCompile Include="Src\Scene\AnswerScene.cpp" />
+    <ClCompile Include="Src\Scene\PlayScene.cpp" />
+    <ClCompile Include="Src\Scene\SceneBase.cpp" />
+    <ClCompile Include="Src\Scene\SceneManager.cpp" />
+    <ClCompile Include="Src\Utility\Fader.cpp" />
+    <ClCompile Include="Src\Utility\Timer.cpp" />
+    <ClCompile Include="Src\Utility\Utility.cpp" />
+    <ClCompile Include="Src\Common\Vector2.cpp" />
+    <ClCompile Include="Src\Common\Vector2F.cpp" />
     <ClCompile Include="Src\UI\UITime.cpp" />
     <ClCompile Include="Src\UI\UIBase.cpp" />
     <ClCompile Include="Src\Object\Car\Car.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    </Filter>
+    <Filter Include="ソース ファイル\Object">
     <ClInclude Include="Src\Object\CharacterBase.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />
@@ -45,5 +64,127 @@
     <ClInclude Include="Src\UI\UIBase.h" />
     <ClInclude Include="Src\Object\Car\Car.h" />
     <ClInclude Include="Src\Object\ObjectID.h" />
+    <ClInclude Include="Src\Object\CharacterBase.h" />
+    <ClInclude Include="Src\Application.h" />
+    <ClInclude Include="Src\main.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Src\Object\Common\Animation2DController.h" />
+    <ClInclude Include="Src\Object\CPUBase.h" />
+    <ClInclude Include="Src\Object\Fruit\Apple.h" />
+    <ClInclude Include="Src\Object\Object.h" />
+    <ClInclude Include="Src\Scene\AnswerScene.h" />
+    <ClInclude Include="Src\Scene\PlayScene.h" />
+    <ClInclude Include="Src\Scene\SceneBase.h" />
+    <ClInclude Include="Src\Scene\SceneID.h" />
+    <ClInclude Include="Src\Scene\SceneManager.h" />
+    <ClInclude Include="Src\Utility\Fader.h" />
+    <ClInclude Include="Src\Utility\Timer.h" />
+    <ClInclude Include="Src\Utility\Utility.h" />
+    <ClInclude Include="Src\Common\Vector2.h" />
+    <ClInclude Include="Src\Common\Vector2F.h" />
+    <ClInclude Include="Src\Object\Player.h" />
+    <ClInclude Include="Src\Common\InputManager.h" />
+  <ItemGroup>
+    <ClCompile Include="Src\Application.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\SceneManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Timer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Utility.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Common\Vector2.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Common\Vector2F.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\SceneBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\PlayScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\AnswerScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Fader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+<<<<<<< HEAD
+=======
+    <ClCompile Include="Src\Object\Player.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Object\CPUBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+>>>>>>> character-etc
+    <ClCompile Include="Src\Object\CharacterBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Application.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\SceneManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Timer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\SceneID.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\AnswerScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\PlayScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\SceneBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Fader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Utility.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Common\Vector2.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Common\Vector2F.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+<<<<<<< HEAD
+=======
+    <ClInclude Include="Src\Object\Player.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Object\CPUBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+>>>>>>> character-etc
+    <ClInclude Include="Src\Object\CharacterBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
