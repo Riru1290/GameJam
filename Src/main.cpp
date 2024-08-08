@@ -19,7 +19,6 @@ int WINAPI WinMain(
 		return -1;
 	}
 
-
 	// é¿çs
 	instance.Run();
 
