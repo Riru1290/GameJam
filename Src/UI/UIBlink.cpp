@@ -17,7 +17,7 @@ UIBlink::~UIBlink()
 void UIBlink::Draw()
 {
 	a_ = pow(sinf(timeCount_), 20.0f);
-	timeCount_ += MyTimer.GetDelta();
+	timeCount_ += MyTimer.GetDelta() * 1.5f;
 
 	float a = (float)255 * (1.0f - a_);
 

@@ -336,6 +336,16 @@ void ResourceManager::Init(void)
 	);
 	resourcesMap_.emplace(SRC::EFFECT_1, move(res));
 
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Effect/Effect_PuffAndStars_1_120x109.png",
+		7,
+		6,
+		120,
+		109
+	);
+	resourcesMap_.emplace(SRC::EFFECT_2, move(res));
+
 
 #pragma endregion
 

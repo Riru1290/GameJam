@@ -41,6 +41,7 @@ private:
 
 	// セレクト画面用画像
 	int imgSelect_;
+	int imgBg_;
 
 	// UI
 	vector<shared_ptr<UIBase>> UIs_;

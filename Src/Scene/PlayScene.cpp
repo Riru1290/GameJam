@@ -86,6 +86,8 @@ void PlayScene::Init()
 		shared_ptr<Object> apple = make_shared<Apple>(appleSpawnPos_[i]);
 		apple->Init();
 		objects_.emplace_back(apple);
+
+		apples_.emplace_back(dynamic_pointer_cast<Apple>(apple));
 		appleNum_++;
 	}
 
@@ -219,15 +221,55 @@ void PlayScene::Release()
 	objects_.clear();
 }
 
+void PlayScene::GetApple(weak_ptr<Apple> apple)
+{
+	if (apple.expired())return;
+
+	apple.lock()->Dead();
+
+	appleNum_--;
+
+
+	// エフェクト
+	shared_ptr<Object> tempSmoke;
+	tempSmoke = make_shared<EffectBase>(
+		false,
+		false,
+		cref(apple.lock()->GetPosition()),
+		ResourceManager::SRC::EFFECT_2,
+		false,
+		false,
+		apple.lock()->GetPosition(),
+		0.0f,
+		2.0f,
+		Vector2F(),
+		0, 41,2.0f
+	);
+	objects_.emplace_back(tempSmoke);
+	// エフェクト発生
+	
+	//erase_if(objects_, [&apple](shared_ptr<Object> obj)
+	//	{return obj == apple.lock(); });
+}
+
 void PlayScene::CheckNearFruit(void)
 {
 	bool ret = false;
+	int i = -1;
 	for (auto& app : appleSpawnPos_)
 	{
+
+		i++;
 		auto diff = Utility::Distance(player_.lock()->GetPos().ToVector2(), app.ToVector2());
-		if (diff < APPLE_COL)ret = true;
+		if (diff < APPLE_COL && apples_[i].lock()->IsAlive())
+		{
+			ret = true;
+			break;
+		}
 	}
 
-	if(ret)player_.lock()->SetNearFruit(true);
-	else player_.lock()->SetNearFruit(false);
+	if(ret)player_.lock()->SetNearFruit(true,apples_[i]);
+	else player_.lock()->SetNearFruit(false, apples_[i]);
+
+
 }

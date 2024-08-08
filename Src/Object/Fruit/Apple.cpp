@@ -5,10 +5,12 @@ Apple::Apple(Vector2F spawnPos)
 	pos_ = spawnPos;
 	objectID_ = OBJECT_ID::APPLE;
 	isLive_ = true;
+	preIsLive_ = isLive_;
 }
 
 Apple::~Apple()
 {
+	DeleteGraph(img_);
 }
 
 void Apple::Init(void)
@@ -22,6 +24,7 @@ void Apple::Init(void)
 
 void Apple::Update(void)
 {
+	preIsLive_ = isLive_;
 }
 
 void Apple::Draw(void)
@@ -33,7 +36,6 @@ void Apple::Draw(void)
 
 void Apple::Release(void)
 {
-	DeleteGraph(img_);
 }
 
 void Apple::Dead(void)

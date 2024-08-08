@@ -1,5 +1,5 @@
-#include "../../pch.h"
 #include"../Common/InputManager.h"
+#include"../Scene/SceneManager.h"
 #include "Player.h"
 
 Player::Player(void)
@@ -25,9 +25,10 @@ void Player::SetParam(void)
 void Player::Move(void)
 {
 	GamePadController();
+	GetApple();
 }
 
-void Player::SetNearFruit(const bool flag)
+void Player::SetNearFruit(const bool flag, weak_ptr<Apple> apple)
 {
 	if (nearFruit_ != flag)
 	{
@@ -37,6 +38,8 @@ void Player::SetNearFruit(const bool flag)
 			StopJoypadVibration(DX_INPUT_PAD1, -1);
 	}
 	nearFruit_ = flag;
+
+	nearApple_ = apple;
 }
 
 
@@ -124,5 +127,18 @@ CharacterBase::DIR Player::CheckDir(float deg)
 	}
 
 	return ret;
+}
+
+void Player::GetApple()
+{
+	if (!nearFruit_ || nearApple_.expired())return;
+
+	InputManager& ins = InputManager::GetInstance();
+
+	// Žæ“¾
+	if (ins.IsPadBtnNew(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT))
+	{
+		SceneMng.GetApple(nearApple_);
+	}
 }
 

@@ -64,6 +64,7 @@ public:
 
 		// エフェクト
 		EFFECT_1,
+		EFFECT_2,
 
 		//CSV
 		STAGE,

@@ -49,6 +49,13 @@ void SceneManager::ChangeScene(SCENE_ID sceneID)
 	isSceneChanging_ = true;
 }
 
+void SceneManager::GetApple(weak_ptr<Apple> apple)
+{
+	if (sceneID_ != SCENE_ID::PLAY)return;
+
+	dynamic_pointer_cast<PlayScene>(scene_)->GetApple(apple);
+}
+
 SceneManager::SceneManager()
 {
 	fader_ = std::make_unique<Fader>();

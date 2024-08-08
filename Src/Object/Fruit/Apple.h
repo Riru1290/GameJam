@@ -14,9 +14,14 @@ public:
 
 	void Dead(void);
 
+	[[nodiscard]] const bool& IsAlive()const { return isLive_; };
+	[[nodiscard]] const bool& PreIsAlive()const { return preIsLive_; };
+
 private:
 
 	int img_;
 	bool isLive_;
+
+	bool preIsLive_;
 };
 

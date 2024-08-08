@@ -2,6 +2,7 @@
 #include"../Common/InputManager.h"
 #include"../UI/UIMove.h"
 #include"../UI/UIFade.h"
+#include"../UI/UIBasic.h"
 #include "SceneManager.h"
 #include "AnswerScene.h"
 
@@ -54,6 +55,10 @@ AnswerScene::AnswerScene()
 
 	imgSelect_ = LoadGraph("Data/Img/UI/select.png");
 
+	imgBg_ = LoadGraph("Data/Img/UI/bg.png");
+
+
+
 	selectedNo_ = 0;
 
 	changeFlag_ = false;
@@ -85,6 +90,8 @@ void AnswerScene::Init()
 		charaImg_.erase(charaImg_.begin() + randNo);
 	}
 
+	shared_ptr<UIBase> tempUI = make_shared<UIBasic>(Vector2F(SCREEN_SIZE_X / 2.0f, 650.0f), 1.0f, "Data/Img/UI/you are lupin.png");
+	UIs_.emplace_back(tempUI);
 }
 
 void AnswerScene::Update()
@@ -100,6 +107,7 @@ void AnswerScene::Update()
 
 void AnswerScene::Draw()
 {
+	DrawGraph(0, 0, imgBg_, true);
 
 	DrawFormatString(0, 0, 0xffffff, "AnswerScene");
 
@@ -124,16 +132,20 @@ void AnswerScene::Draw()
 			0x777777, true);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-		for (auto UI : UIs_) {
-			UI->Draw();
-		}
+
 	}
+
+	for (auto UI : UIs_) {
+		UI->Draw();
+	}
+
 }
 
 void AnswerScene::Release()
 {
 	DeleteGraph(imgPin_);
 	DeleteGraph(imgSelect_);
+	DeleteGraph(imgBg_);
 }
 
 void AnswerScene::SelectLupin()
@@ -157,9 +169,10 @@ void AnswerScene::SelectLupin()
 			filePath = "Data/Img/UI/lupinWin.png";
 		}
 		
+		UIs_.clear();
 
 		shared_ptr<UIBase> tempUI;
-		Vector2F pos = { SCREEN_SIZE_X / 2.0f,SCREEN_SIZE_Y / 2.0f };
+		Vector2F pos = { SCREEN_SIZE_X / 2.0f,SCREEN_SIZE_Y / 2.0f - 50.0f };
 		tempUI = make_shared<UIMove>(pos - Vector2F(0.0f, 1000.0f), pos, 3.0f, filePath.c_str());
 		UIs_.emplace_back(tempUI);
 

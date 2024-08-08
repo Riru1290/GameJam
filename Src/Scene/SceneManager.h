@@ -3,6 +3,7 @@
 
 class SceneBase;
 class Fader;
+class Apple;
 
 class SceneManager
 {
@@ -22,6 +23,9 @@ public:
 	[[nodiscard]] const int& GetLupinNo()const { return lupinNo_; };
 	void SetLupinNo(int no) { lupinNo_ = no; };
 
+	// ‚æ‚­‚È‚¢‚¯‚Ç‹–‚µ‚Ä
+	void GetApple(weak_ptr<Apple> apple);
+
 private:
 
 	SceneManager();
@@ -29,7 +33,7 @@ private:
 	SceneManager(const SceneManager&) = delete;
 	SceneManager& operator=(const SceneManager&) = delete;
 
-	unique_ptr<SceneBase> scene_;
+	shared_ptr<SceneBase> scene_;
 	unique_ptr<Fader> fader_;
 
 	SCENE_ID sceneID_;

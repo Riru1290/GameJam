@@ -2,6 +2,7 @@
 
 Object::Object()
 {
+    size_ = 1.0f;
 }
 
 Object::~Object()

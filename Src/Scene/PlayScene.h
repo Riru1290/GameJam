@@ -24,6 +24,8 @@ public:
 	void Release() override;
 
 	[[nodiscard]] const int& GetAppleNum()const { return appleNum_; };
+
+	void GetApple(weak_ptr<Apple> apple);
  
 private:
 
@@ -31,6 +33,9 @@ private:
 
 	//vector<shared_ptr<CPUBase>> cpu_;
 	weak_ptr<Player> player_;
+
+	vector<weak_ptr<Apple>> apples_;
+
 	shared_ptr<Stage> stage_;
 
 	vector<shared_ptr<Object>> objects_;
@@ -38,6 +43,8 @@ private:
 
 	// UI
 	vector<shared_ptr<UIBase>> UIs_;
+
+
 
 	static constexpr int APPLE_NUM_MAX = (4);
 	Vector2F appleSpawnPos_[APPLE_NUM_MAX];
