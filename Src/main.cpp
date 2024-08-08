@@ -1,4 +1,3 @@
-#include <DxLib.h>
 #include "Application.h"
 
 // WinMainŠÖ”
@@ -19,7 +18,6 @@ int WINAPI WinMain(
 		// ‰Šú‰»¸”s
 		return -1;
 	}
-
 
 	// Às
 	instance.Run();
