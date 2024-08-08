@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-#include "pch.h"
-=======
->>>>>>> b953db6d1dbe6249bf55d30e9344cbe75e8aa6da
 #include "CharacterBase.h"
-=======
-#include"../../pch.h"
+
 #include"../Utility/Utility.h"
 #include "CharacterBase.h"
 
@@ -169,4 +163,3 @@ CharacterBase::DIR CharacterBase::GetDir(void) const
 void CharacterBase::SetParam(void)
 {
 }
->>>>>>> character-etc
