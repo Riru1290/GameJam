@@ -1,7 +1,8 @@
 #include "Apple.h"
 
-Apple::Apple()
+Apple::Apple(Vector2F spawnPos)
 {
+	pos_ = spawnPos;
 	objectID_ = OBJECT_ID::APPLE;
 }
 
@@ -13,7 +14,6 @@ void Apple::Init(void)
 {
 
 	img_ = LoadGraph("Data/Img/Fruit/Apple Red.png");
-	pos_ = { 100.0f,100.0f };
 	size_ = 3.0f;
 	angle_ = 0.0f;
 }

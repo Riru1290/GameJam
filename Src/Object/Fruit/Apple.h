@@ -5,7 +5,7 @@ class Apple final : public Object
 {
 public:
 
-	Apple();
+	Apple(Vector2F spawnPos);
 	~Apple();
 
 	void Init(void) override;

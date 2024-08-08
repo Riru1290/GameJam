@@ -22,6 +22,8 @@ public:
 	void Draw()override;
 	void Release() override;
 
+	[[nodiscard]] const int& GetAppleNum()const { return appleNum_; };
+ 
 private:
 
 	vector<int*> charaImg_;
@@ -36,5 +38,11 @@ private:
 
 	// UI
 	vector<shared_ptr<UIBase>> UIs_;
+
+	static constexpr int APPLE_NUM_MAX = (4);
+	Vector2F appleSpawnPos_[APPLE_NUM_MAX];
+
+	// 現在残っているアップルの数
+	int appleNum_;
 };
 

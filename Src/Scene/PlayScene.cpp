@@ -6,7 +6,7 @@
 #include"../Object/Stage.h"
 #include "../Object/Car/Car.h"
 #include "../UI/UITime.h"
-#include "../UI/UIBase.h"
+#include "../UI/UIApple.h"
 #include "SceneManager.h"
 #include "PlayScene.h"
 
@@ -47,14 +47,25 @@ void PlayScene::Init()
 	stage_ = make_shared<Stage>();
 	stage_->Init();
 
-	shared_ptr<Object> apple = make_shared<Apple>();
-	apple->Init();
 
-	//auto& ap = objects_[OBJECT_ID::APPLE];
-	objects_.emplace_back(apple);
+	appleSpawnPos_[0] = { 200.0f,200.0f};
+	appleSpawnPos_[1] = { 1000.0f,500.0f };
+	appleSpawnPos_[2] = { 200.0f,500.0f };
+	appleSpawnPos_[3] = { 1000.0f,200.0f };
+
+	for (int i = 0; i < APPLE_NUM_MAX; i++) {
+		shared_ptr<Object> apple = make_shared<Apple>(appleSpawnPos_[i]);
+		apple->Init();
+		objects_.emplace_back(apple);
+		appleNum_++;
+	}
+
 
 	shared_ptr<UIBase> tempUI;
 	tempUI = make_shared<UITime>();
+	UIs_.emplace_back(tempUI);
+
+	tempUI = make_shared<UIApple>(cref(GetAppleNum()));
 	UIs_.emplace_back(tempUI);
 }
 
@@ -75,21 +86,14 @@ void PlayScene::Update()
 		MyTimer.Restart("CAR_SPAWN_TIME");
 		shared_ptr<Object> tempCar;
 		tempCar = make_shared<Car>();
-		//auto& cars = objects_[OBJECT_ID::CAR];
 		objects_.emplace_back(tempCar);
 	}
 
 	for (auto obj : objects_) {
-		//for (auto obj : objs) {
-			obj->Update();
-		//}
+		obj->Update();
 	}
 
-	//apple_->Update();
 
-	//for (auto car : cars_) {
-	//	car->Update();
-	//}
 }
 
 void PlayScene::Draw()
@@ -108,9 +112,7 @@ void PlayScene::Draw()
 	//sort(objects_,)
 
 	for (auto obj : objects_) {
-		//for (auto obj : objs) {
-			obj->Draw();
-		//}
+		obj->Draw();
 	}
 
 	for (auto UI : UIs_) {
@@ -129,9 +131,7 @@ void PlayScene::Release()
 	for (auto& c : cpu_)c->Release();
 	player_->Release();
 	for (auto obj : objects_) {
-		//for (auto obj : objs) {
-			obj->Release();
-		//}
+		obj->Release();
 	}
 
 	objects_.clear();
