@@ -30,5 +30,7 @@ private:
 	Vector2F moveDir_;
 
 	STATE state_;
+
+	bool isCheckOffScreen_;
 };
 

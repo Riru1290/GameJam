@@ -101,3 +101,17 @@ float Utility::GetCrossProductF(Vector2F v1, Vector2F v2)
 {
 	return (v1.x * v2.y) - (v1.y * v2.x);
 }
+
+bool Utility::IsIncludedInArea(float width, float height, Vector2F pos, Vector2F checkPos)
+{
+	Vector2F posLT = { pos.x - width / 2.0f,pos.y - height / 2.0f };
+	Vector2F posRD = { pos.x + width / 2.0f,pos.y + height / 2.0f };
+
+	// ’†S“_‚ª‰æŠp‚É“ü‚Á‚Ä‚¢‚é‚©”»’è
+	if (posLT.x <= checkPos.x && checkPos.x <= posRD.x &&
+		posLT.y <= checkPos.y && checkPos.y <= posRD.y) {
+		return true;
+	}
+
+	return false;
+}
