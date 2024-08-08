@@ -15,3 +15,8 @@ void CPUBase::Move(void)
 
 	if (static_cast<int>(diff) > moveLimit_) { SetIsMove(false); }
 }
+
+void CPUBase::SetIsMove(const bool flag)
+{
+	isMove_ = flag;
+}
