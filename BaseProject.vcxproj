@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Common\InputManager.cpp" />
+    <ClCompile Include="Src\Common\Resource.cpp" />
+    <ClCompile Include="Src\Common\ResourceManager.cpp" />
     <ClCompile Include="Src\Object\CharacterBase.cpp" />
     <ClCompile Include="Src\Application.cpp" />
     <ClCompile Include="Src\main.cpp" />
@@ -46,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Common\InputManager.h" />
+    <ClInclude Include="Src\Common\Resource.h" />
+    <ClInclude Include="Src\Common\ResourceManager.h" />
     <ClInclude Include="Src\Object\CharacterBase.h" />
     <ClInclude Include="Src\Application.h" />
     <ClInclude Include="Src\main.h" />

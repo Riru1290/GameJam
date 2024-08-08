@@ -12,10 +12,12 @@ Player::~Player(void)
 
 void Player::SetParam(void)
 {
+	pos_ = Vector2F{ 0.0f,0.0f };
 }
 
 void Player::Move(void)
 {
+	GamePadController();
 }
 
 void Player::GamePadController(void)

@@ -1,5 +1,5 @@
 #include "CharacterBase.h"
-
+#include"../Application.h"
 #include"../Utility/Utility.h"
 #include "CharacterBase.h"
 
@@ -22,6 +22,8 @@ CharacterBase::~CharacterBase(void)
 void CharacterBase::Init(int* image)
 {
 	img_ = image;
+	move_ = 2.0f;
+	pos_ = Vector2F{ Application::SCREEN_SIZE_X / 2,Application::SCREEN_SIZE_Y / 2 };
 	SetParam();
 	//アニメーションを向いてる方向に初期化
 	animIdx_ = ANIM_NUM * static_cast<int>(dir_) + ANIM_CENTER;
@@ -42,7 +44,7 @@ void CharacterBase::Draw(void)
 	//キャラクター
 	DrawRotaGraph(pos_.x,
 		pos_.y,
-		1.0f,
+		1.5f,
 		0.0 * Utility::DEG2RAD,
 		img_[animIdx_],
 		true,

@@ -1,6 +1,7 @@
 #include <DxLib.h>
 #include <EffekseerForDXLib.h>
 #include "Scene/SceneManager.h"
+#include"Common/ResourceManager.h"
 #include "Application.h"
 
 Application* Application::instance_ = nullptr;
@@ -52,6 +53,9 @@ void Application::Init(void)
 	// キー制御初期化
 	SetUseDirectInputFlag(true);
 
+	//ResourceManagerの起動
+	ResourceManager::CreateInstance();
+
 }
 
 void Application::Run(void)
@@ -72,6 +76,8 @@ void Application::Run(void)
 
 void Application::Destroy(void)
 {
+	//ResourceManagerを終了する
+	ResourceManager::GetInstance().Release();
 
 	// Effekseerを終了する。
 	Effkseer_End();

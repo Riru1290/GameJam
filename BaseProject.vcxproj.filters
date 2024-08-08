@@ -20,6 +20,8 @@
     <ClCompile Include="Src\Common\Vector2F.cpp" />
     <ClCompile Include="Src\Object\Player.cpp" />
     <ClCompile Include="Src\Common\InputManager.cpp" />
+    <ClCompile Include="Src\Common\Resource.cpp" />
+    <ClCompile Include="Src\Common\ResourceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Object\CharacterBase.h" />
@@ -42,5 +44,7 @@
     <ClInclude Include="Src\Common\Vector2F.h" />
     <ClInclude Include="Src\Object\Player.h" />
     <ClInclude Include="Src\Common\InputManager.h" />
+    <ClInclude Include="Src\Common\Resource.h" />
+    <ClInclude Include="Src\Common\ResourceManager.h" />
   </ItemGroup>
 </Project>
