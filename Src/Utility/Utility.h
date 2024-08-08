@@ -55,5 +55,8 @@ public:
 
 	static float GetInnerProductF(Vector2F v1, Vector2F v2);
 	static float GetCrossProductF(Vector2F v1, Vector2F v2);
+
+	// ’Ç‰Á•ª
+	static bool IsIncludedInArea(float width, float height, Vector2F pos, Vector2F checkPos);
 };
 

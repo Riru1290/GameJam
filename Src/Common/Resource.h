@@ -19,6 +19,7 @@ public:
 		//EFFEKSEER
 	};
 
+
 	// コンストラクタ
 	Resource(void);
 	// コンストラクタ
