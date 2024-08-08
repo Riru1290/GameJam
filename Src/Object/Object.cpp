@@ -23,3 +23,9 @@ void Object::Draw(void)
 void Object::Release(void)
 {
 }
+
+float Object::GetFootPos() const
+{
+    float foosPos = pos_.y + imgSize_.y / 2.0f;
+    return foosPos;
+}
