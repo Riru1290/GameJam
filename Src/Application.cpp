@@ -56,6 +56,8 @@ void Application::Run(void)
 	// ƒQ[ƒ€ƒ‹[ƒv
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
+		MyTimer.Run();
+
 		SceneMng.Execute();
 		SceneMng.Draw();
 
