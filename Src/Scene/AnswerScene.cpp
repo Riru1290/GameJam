@@ -104,7 +104,7 @@ void AnswerScene::Draw()
 	DrawFormatString(0, 0, 0xffffff, "AnswerScene");
 
 
-	DrawRotaGraph(SCREEN_SIZE_X / 2.0f, SCREEN_SIZE_Y / 2.0f - 250.0f, 1.0f, 0.0f, imgSelect_, true);
+	DrawRotaGraph(SCREEN_SIZE_X / 2.0f, SCREEN_SIZE_Y / 2.0f - 250.0f, 1.5f, 0.0f, imgSelect_, true);
 
 	// キャラクター描画
 	for (int i = 0; i < DISPLAY_CHARACTER_NUM; i++) {

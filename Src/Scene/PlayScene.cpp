@@ -9,6 +9,7 @@
 #include "../UI/UITime.h"
 #include "../UI/UIApple.h"
 #include "../UI/UICountDown.h"
+#include "../UI/UIBasic.h"
 #include "SceneManager.h"
 #include "PlayScene.h"
 
@@ -45,7 +46,7 @@ PlayScene::PlayScene()
 
 void PlayScene::Init()
 {
-	MyTimer.SetTimer("GAME_TIME", 10.0f);
+	MyTimer.SetTimer("GAME_TIME", 60.0f);
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
 	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
 
@@ -97,6 +98,9 @@ void PlayScene::Init()
 	UIs_.emplace_back(tempUI);
 
 	tempUI = make_shared<UICountDown>();
+	UIs_.emplace_back(tempUI);
+
+	tempUI = make_shared<UIBasic>(Vector2F(150.0f,650.0f),0.65f, "Data/Img/UI/appleTuto.png");
 	UIs_.emplace_back(tempUI);
 }
 
