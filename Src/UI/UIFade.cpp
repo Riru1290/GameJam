@@ -1,6 +1,6 @@
 #include "UIFade.h"
 
-UIFade::UIFade(Vector2F pos, float inDisplayTime, float fadeInTime, float fadeOutTime, float displayTime, bool isFadeOut_, string fileName)
+UIFade::UIFade(Vector2F pos, float inDisplayTime, float fadeInTime, float fadeOutTime, float displayTime, bool isFadeOut, string fileName)
 {
 	pos_ = pos;
 
@@ -13,7 +13,7 @@ UIFade::UIFade(Vector2F pos, float inDisplayTime, float fadeInTime, float fadeOu
 	fadeOutTime_ = fadeOutTime;
 	displayTime_ = displayTime;
 
-	isFadeOut_ = isFadeOut_;
+	isFadeOut_ = isFadeOut;
 
 	img_ = LoadGraph(fileName.c_str());
 }
@@ -36,7 +36,7 @@ void UIFade::Draw()
 		a_ = 0.0f;
 	}
 	else if (!isFadeOut_) {
-		a_ = 1.0f;
+		a_ = 0.0f;
 	}
 	else if (fadeInTime_ + displayTime_ + fadeOutTime_ >= timeCount_ - inDisplayTime_) {
 		a_ = ((timeCount_ - inDisplayTime_ - displayTime_ - fadeInTime_) / fadeOutTime_);

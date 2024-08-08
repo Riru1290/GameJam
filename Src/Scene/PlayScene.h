@@ -52,6 +52,9 @@ private:
 	// 現在残っているアップルの数
 	int appleNum_;
 
+	bool createEffectFlag_;
+	weak_ptr<Apple> nearApple_;
+
 
 	void CheckNearFruit(void);
 

@@ -104,6 +104,8 @@ void PlayScene::Init()
 
 	tempUI = make_shared<UIBasic>(Vector2F(150.0f,650.0f),0.65f, "Data/Img/UI/appleTuto.png");
 	UIs_.emplace_back(tempUI);
+
+	createEffectFlag_ = false;
 }
 
 void PlayScene::Update()
@@ -171,6 +173,27 @@ void PlayScene::Update()
 
 	}
 
+	if (createEffectFlag_) {
+		// エフェクト
+		shared_ptr<Object> tempSmoke;
+		tempSmoke = make_shared<EffectBase>(
+			false,
+			false,
+			cref(nearApple_.lock()->GetPosition()),
+			ResourceManager::SRC::EFFECT_2,
+			false,
+			false,
+			nearApple_.lock()->GetPosition(),
+			0.0f,
+			2.0f,
+			Vector2F(),
+			0, 41, 2.0f
+		);
+		objects_.emplace_back(tempSmoke);
+
+		createEffectFlag_ = false;
+	}
+
 	for (auto obj : objects_) {
 		obj->Update();
 	}
@@ -229,27 +252,10 @@ void PlayScene::GetApple(weak_ptr<Apple> apple)
 
 	appleNum_--;
 
+	nearApple_ = apple;
 
-	// エフェクト
-	shared_ptr<Object> tempSmoke;
-	tempSmoke = make_shared<EffectBase>(
-		false,
-		false,
-		cref(apple.lock()->GetPosition()),
-		ResourceManager::SRC::EFFECT_2,
-		false,
-		false,
-		apple.lock()->GetPosition(),
-		0.0f,
-		2.0f,
-		Vector2F(),
-		0, 41,2.0f
-	);
-	objects_.emplace_back(tempSmoke);
-	// エフェクト発生
-	
-	//erase_if(objects_, [&apple](shared_ptr<Object> obj)
-	//	{return obj == apple.lock(); });
+	createEffectFlag_ = true;
+
 }
 
 void PlayScene::CheckNearFruit(void)
