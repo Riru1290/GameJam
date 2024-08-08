@@ -30,6 +30,8 @@ void Player::GamePadController(void)
 		
 	}
 
+	auto prevDir = dir_;
+
 	// 左スティックの横軸
 	auto leftStickX = ins.GetInstance().GetJPadInputState(InputManager::JOYPAD_NO::PAD1).AKeyLX;
 	// 左スティックの縦軸
@@ -54,6 +56,7 @@ void Player::GamePadController(void)
 	{
 		SetDir(dir);
 	}
+	if (prevDir != dir_)ResetAnim(dir);
 }
 
 CharacterBase::DIR Player::CheckDir(float deg)
@@ -62,7 +65,7 @@ CharacterBase::DIR Player::CheckDir(float deg)
 	//各方向４５°ずつ
 	int counter = 0;	//方向決めを何回行ったかをカウント。これに応じて方向をセット
 	DIR ret = DIR::RIGHT;
-	for (int i = 1; i < static_cast<int>(DIR::MAX); i++)
+	for (int i = 1; i <= static_cast<int>(DIR::MAX); i++)
 	{
 		if (deg <= (UNIT_DIR_DEG * i) + UNIT_DIR_DEG / 2 &&
 			deg > (UNIT_DIR_DEG * i) - UNIT_DIR_DEG / 2)
