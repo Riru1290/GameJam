@@ -20,6 +20,26 @@ PlayScene::PlayScene()
 	rsM.Load(ResourceManager::SRC::CHARACTER_2).handleIds_,
 	rsM.Load(ResourceManager::SRC::CHARACTER_3).handleIds_,
 	rsM.Load(ResourceManager::SRC::CHARACTER_4).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_5).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_6).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_7).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_8).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_9).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_10).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_11).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_12).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_13).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_14).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_15).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_16).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_17).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_18).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_19).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_20).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_21).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_22).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_23).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_24).handleIds_,
 	};
 }
 
@@ -143,6 +163,8 @@ void PlayScene::Update()
 	for (auto obj : objects_) {
 		obj->Update();
 	}
+
+	CheckNearFruit();
 }
 
 void PlayScene::Draw()
@@ -177,7 +199,7 @@ void PlayScene::Release()
 {
 	MyTimer.Delete("GAME_TIME");
 	MyTimer.Delete("GAME_START_TIME");
-
+	StopJoypadVibration(DX_INPUT_PAD1, -1);
 
 	for (auto& c : cpu_)c->Release();
 	player_->Release();
@@ -186,4 +208,17 @@ void PlayScene::Release()
 	}
 
 	objects_.clear();
+}
+
+void PlayScene::CheckNearFruit(void)
+{
+	bool ret = false;
+	for (auto& app : appleSpawnPos_)
+	{
+		auto diff = Utility::Distance(player_->GetPos().ToVector2(), app.ToVector2());
+		if (diff < APPLE_COL)ret = true;
+	}
+
+	if(ret)player_->SetNearFruit(true);
+	else player_->SetNearFruit(false);
 }

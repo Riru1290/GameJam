@@ -112,9 +112,209 @@ void ResourceManager::Init(void)
 		CharacterBase::CHARACTER_SIZE_Y
 	);
 	resourcesMap_.emplace(SRC::CHARACTER_4, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hayate1.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_5, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hime1.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_6, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/made1.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_7, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/old1.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_8, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hayate2.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_9, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hime2.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_10, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/made2.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_11, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/old2.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_12, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hayate3.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_13, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hime3.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_14, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/made3.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_15, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/old3.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_16, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hayate4.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_17, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hime4.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_18, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/made4.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_19, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/old4.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_20, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hayate5.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_21, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/hime5.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_22, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/made5.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_23, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Character/old5.png",
+		CHARACTER_ORIGIN_SIZE_X / CharacterBase::CHARACTER_SIZE_X,
+		CHARACTER_ORIGIN_SIZE_Y_2 / CharacterBase::CHARACTER_SIZE_Y,
+		CharacterBase::CHARACTER_SIZE_X,
+		CharacterBase::CHARACTER_SIZE_Y
+	);
+	resourcesMap_.emplace(SRC::CHARACTER_24, move(res));
 	
 
-
+	//マップ
 	res = make_unique<Resource>(
 		Resource::TYPE::IMGS,
 		"Data/Image/Stage/tile.png",

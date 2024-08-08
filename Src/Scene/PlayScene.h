@@ -13,7 +13,8 @@ class Stage;
 class PlayScene : public SceneBase
 {
 public:
-
+	static constexpr float APPLE_COL = 80.0f;
+	
 	PlayScene();
 	~PlayScene()override = default;
 
@@ -43,6 +44,9 @@ private:
 
 	// 現在残っているアップルの数
 	int appleNum_;
+
+
+	void CheckNearFruit(void);
 
 	int lupinNo_;
 };

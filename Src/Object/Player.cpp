@@ -4,10 +4,17 @@
 
 Player::Player(void)
 {
+	nearFruit_ = false;
 }
 
 Player::~Player(void)
 {
+}
+
+void Player::Update(void)
+{
+	CharacterBase::Update();
+
 }
 
 void Player::SetParam(void)
@@ -19,6 +26,19 @@ void Player::Move(void)
 {
 	GamePadController();
 }
+
+void Player::SetNearFruit(const bool flag)
+{
+	if (nearFruit_ != flag)
+	{
+		if (flag)
+			StartJoypadVibration(DX_INPUT_PAD1, 400, -1, -1);
+		else 
+			StopJoypadVibration(DX_INPUT_PAD1, -1);
+	}
+	nearFruit_ = flag;
+}
+
 
 void Player::GamePadController(void)
 {

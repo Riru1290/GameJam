@@ -98,6 +98,7 @@ protected:
 
 	void ResetAnim(DIR dir);
 	virtual void Move(void);	//“®‚«‚Ìˆ—
+	void MoveOut(void);	//‰æ–ÊŠO‚És‚Á‚½‚Ìˆ—
 	void SetDir(DIR dir);		//•ûŒü‚Ì•ÏŠ·
 
 	DIR GetDir(void)const;

@@ -4,7 +4,6 @@
 class Apple final : public Object
 {
 public:
-
 	Apple(Vector2F spawnPos);
 	~Apple();
 
@@ -13,8 +12,11 @@ public:
 	void Draw(void)override;
 	void Release(void)override;
 
+	void Dead(void);
+
 private:
 
 	int img_;
+	bool isLive_;
 };
 
