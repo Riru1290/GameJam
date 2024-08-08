@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <chrono>
 #include <functional>
+#include <algorithm>
 
 
 #include <DxLib.h>

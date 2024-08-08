@@ -25,7 +25,7 @@ public:
 	void SetAngle(const float& angle) { angle_ = angle; };
 	void SetSize(const float& size) { size_ = size; };
 
-	[[nodiscard]] float GetFootPos()const;
+	virtual [[nodiscard]] float GetFootPos()const;
 
 
 protected:

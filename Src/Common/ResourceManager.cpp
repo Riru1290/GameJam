@@ -124,6 +124,19 @@ void ResourceManager::Init(void)
 		Stage::TILE_SIZE
 	);
 	resourcesMap_.emplace(SRC::MAP_TILE, move(res));
+
+	// エフェクト(マジックナンバー許して)
+	res = make_unique<Resource>(
+		Resource::TYPE::IMGS,
+		"Data/Img/Effect/carSmoke.png",
+		10,
+		1,
+		64,
+		27
+	);
+	resourcesMap_.emplace(SRC::EFFECT_1, move(res));
+
+
 #pragma endregion
 
 
