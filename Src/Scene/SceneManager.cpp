@@ -1,4 +1,5 @@
 #include "../Utility/Fader.h"
+#include "TitleScene.h"
 #include "PlayScene.h"
 #include "AnswerScene.h"
 #include "SceneManager.h"
@@ -54,8 +55,8 @@ SceneManager::SceneManager()
 	fader_->Init();
 
 	// èâä˙ÉVÅ[ÉìÇÃê›íË
-	nextSceneID_ = SCENE_ID::PLAY;
-	sceneID_ = SCENE_ID::PLAY;
+	nextSceneID_ = SCENE_ID::TITLE;
+	sceneID_ = SCENE_ID::TITLE;
 	DoChangeScene();
 }
 
@@ -71,6 +72,9 @@ void SceneManager::DoChangeScene()
 
 	switch (nextSceneID_)
 	{
+	case SCENE_ID::TITLE:
+		scene_.reset(new TitleScene());
+		break;
 	case SCENE_ID::PLAY:
 		scene_.reset(new PlayScene());
 		break;

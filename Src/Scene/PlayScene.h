@@ -29,8 +29,8 @@ private:
 
 	vector<int*> charaImg_;
 
-	vector<shared_ptr<CPUBase>> cpu_;
-	shared_ptr<Player> player_;
+	//vector<shared_ptr<CPUBase>> cpu_;
+	weak_ptr<Player> player_;
 	shared_ptr<Stage> stage_;
 
 	vector<shared_ptr<Object>> objects_;

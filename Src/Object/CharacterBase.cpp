@@ -21,6 +21,8 @@ CharacterBase::~CharacterBase(void)
 void CharacterBase::Init(int* image)
 {
 	img_ = image;
+	GetGraphSize(img_[0], &imgSize_.x, &imgSize_.y);
+	size_ = 1.0f;
 	move_ = 2.0f;
 	pos_ = Vector2F{ SCREEN_SIZE_X / 2,SCREEN_SIZE_Y / 2 };
 	SetParam();

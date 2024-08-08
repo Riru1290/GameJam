@@ -1,8 +1,8 @@
 #pragma once
 
-#include"../Common/Vector2F.h"
+#include "Object.h"
 
-class CharacterBase
+class CharacterBase : public Object
 {
 public:
 
@@ -84,7 +84,7 @@ protected:
 	int* img_;
 
 	//ˆÊ’u
-	Vector2F pos_;
+	//Vector2F pos_;
 	Vector2F prevPos_;
 
 	//•ûŒü

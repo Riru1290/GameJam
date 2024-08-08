@@ -1,6 +1,7 @@
 #include"../Common/ResourceManager.h"
 #include"../Common/InputManager.h"
 #include"../UI/UIMove.h"
+#include"../UI/UIFade.h"
 #include "SceneManager.h"
 #include "AnswerScene.h"
 
@@ -8,14 +9,30 @@ AnswerScene::AnswerScene()
 {
 	auto& rsM = ResourceManager::GetInstance();
 	charaImg_ = {
-		rsM.Load(ResourceManager::SRC::CHARACTER_1).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_2).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_3).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_4).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_1).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_2).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_3).handleIds_,
-		rsM.Load(ResourceManager::SRC::CHARACTER_4).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_1).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_2).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_3).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_4).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_5).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_6).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_7).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_8).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_9).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_10).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_11).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_12).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_13).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_14).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_15).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_16).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_17).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_18).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_19).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_20).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_21).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_22).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_23).handleIds_,
+	rsM.Load(ResourceManager::SRC::CHARACTER_24).handleIds_,
 	};
 
 	displayPos_ = {
@@ -146,6 +163,24 @@ void AnswerScene::SelectLupin()
 		tempUI = make_shared<UIMove>(pos - Vector2F(0.0f, 1000.0f), pos, 3.0f, filePath.c_str());
 		UIs_.emplace_back(tempUI);
 
+		Vector2F lpos = { SCREEN_SIZE_X / 2.0f - 200.0f,SCREEN_SIZE_Y / 2.0f + 200.0f };
+		tempUI = make_shared<UIFade>(
+			lpos,
+			3.0f, 
+			0.5f, 0.0f,1.0f,false, 
+			"Data/Img/UI/gotoTitle.png"
+		);
+		UIs_.emplace_back(tempUI);
+
+		Vector2F rpos = { SCREEN_SIZE_X / 2.0f + 200.0f,SCREEN_SIZE_Y / 2.0f + 200.0f };
+		tempUI = make_shared<UIFade>(
+			rpos,
+			3.0f,
+			0.5f, 0.0f, 1.0f, false,
+			"Data/Img/UI/continue.png"
+		);
+		UIs_.emplace_back(tempUI);
+
 		return;
 	}
 
@@ -210,5 +245,8 @@ void AnswerScene::Result()
 	// Œˆ’è
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
 		SceneMng.ChangeScene(SCENE_ID::PLAY);
+	}
+	else if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::LEFT)) {
+		SceneMng.ChangeScene(SCENE_ID::TITLE);
 	}
 }

@@ -58,12 +58,17 @@ void PlayScene::Init()
 		{
 			auto CPU = make_shared<CPUBase>();
 			CPU->Init(charaImg_[i]);
-			cpu_.push_back(CPU);
+
+			objects_.emplace_back(CPU);
+			//cpu_.push_back(CPU);
 		}
 		else
 		{
-			player_ = make_shared<Player>();
-			player_->Init(charaImg_[i]);
+			auto player = make_shared<Player>();
+			player->Init(charaImg_[i]);
+			player_ = player;
+
+			objects_.emplace_back(player);
 		}
 	}
 	stage_ = make_shared<Stage>();
@@ -108,8 +113,8 @@ void PlayScene::Update()
 		MyTimer.Start("GAME_TIME");
 	}
 
-	for (auto& c : cpu_)c->Update();
-	player_->Update();
+	//for (auto& c : cpu_)c->Update();
+	//player_->Update();
 	if (MyTimer.IsEndTimer("CAR_SPAWN_TIME")) {
 		MyTimer.Restart("CAR_SPAWN_TIME");
 		shared_ptr<Object> tempCar;
@@ -177,8 +182,8 @@ void PlayScene::Draw()
 	DrawFormatString(0, 40, 0xffffff, "GameStartTime : %f", MyTimer.GetTime("GAME_START_TIME"));
 
 
-	for (auto& c : cpu_)c->Draw();
-	player_->Draw();
+	//for (auto& c : cpu_)c->Draw();
+	//player_->Draw();
 
 	sort(objects_.begin(), objects_.end(), [](weak_ptr<Object> a, weak_ptr<Object> b) {
 		return a.lock()->GetFootPos() < b.lock()->GetFootPos();
@@ -201,8 +206,8 @@ void PlayScene::Release()
 	MyTimer.Delete("GAME_START_TIME");
 	StopJoypadVibration(DX_INPUT_PAD1, -1);
 
-	for (auto& c : cpu_)c->Release();
-	player_->Release();
+	//for (auto& c : cpu_)c->Release();
+	//player_->Release();
 	for (auto obj : objects_) {
 		obj->Release();
 	}
@@ -215,10 +220,10 @@ void PlayScene::CheckNearFruit(void)
 	bool ret = false;
 	for (auto& app : appleSpawnPos_)
 	{
-		auto diff = Utility::Distance(player_->GetPos().ToVector2(), app.ToVector2());
+		auto diff = Utility::Distance(player_.lock()->GetPos().ToVector2(), app.ToVector2());
 		if (diff < APPLE_COL)ret = true;
 	}
 
-	if(ret)player_->SetNearFruit(true);
-	else player_->SetNearFruit(false);
+	if(ret)player_.lock()->SetNearFruit(true);
+	else player_.lock()->SetNearFruit(false);
 }

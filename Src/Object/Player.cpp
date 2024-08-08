@@ -19,7 +19,7 @@ void Player::Update(void)
 
 void Player::SetParam(void)
 {
-	pos_ = Vector2F{ 0.0f,0.0f };
+	pos_ = Vector2F{ SCREEN_SIZE_X /2.0f,SCREEN_SIZE_Y / 2.0f };
 }
 
 void Player::Move(void)
