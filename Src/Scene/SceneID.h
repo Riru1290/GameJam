@@ -2,6 +2,6 @@
 
 enum class SCENE_ID
 {
-	TITLE,
-	GAME,
+	PLAY,
+	ANSWER,
 };

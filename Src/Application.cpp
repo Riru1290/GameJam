@@ -1,5 +1,6 @@
 #include <DxLib.h>
 #include <EffekseerForDXLib.h>
+#include "Scene/SceneManager.h"
 #include "Application.h"
 
 Application* Application::instance_ = nullptr;
@@ -55,9 +56,10 @@ void Application::Run(void)
 	// ÉQÅ[ÉÄÉãÅ[Év
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
+		SceneMng.Execute();
+		SceneMng.Draw();
 
 		ScreenFlip();
-
 	}
 
 }
