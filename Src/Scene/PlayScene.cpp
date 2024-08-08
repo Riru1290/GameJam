@@ -25,10 +25,10 @@ void PlayScene::Init()
 {
 	MyTimer.SetTimer("GAME_TIME", 10.0f);
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
-	MyTimer.SetTimer("CAR_SPAWN_TIME", 5.0f,true);
+	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
 
 
-	int playerNum = GetRand(charaImg_.size());
+	int playerNum = GetRand(charaImg_.size() - 1);
 
 	for (int i = 0; i < charaImg_.size(); i++)
 	{
@@ -50,7 +50,8 @@ void PlayScene::Init()
 	shared_ptr<Object> apple = make_shared<Apple>();
 	apple->Init();
 
-	objects_.emplace(OBJECT_ID::APPLE, apple);
+	//auto& ap = objects_[OBJECT_ID::APPLE];
+	objects_.emplace_back(apple);
 
 	shared_ptr<UIBase> tempUI;
 	tempUI = make_shared<UITime>();
@@ -73,12 +74,15 @@ void PlayScene::Update()
 	if (MyTimer.IsEndTimer("CAR_SPAWN_TIME")) {
 		MyTimer.Restart("CAR_SPAWN_TIME");
 		shared_ptr<Object> tempCar;
-		tempCar = make_shared<Car>(Vector2F(-1.0f,0.0f), Vector2F(500.0f,500.0f));
-		objects_.emplace(OBJECT_ID::CAR, tempCar);
+		tempCar = make_shared<Car>(Vector2F(-1.0f,0.0f), Vector2F(1500.0f,500.0f));
+		//auto& cars = objects_[OBJECT_ID::CAR];
+		objects_.emplace_back(tempCar);
 	}
 
-	for (auto [id,obj] : objects_) {
-		obj->Update();
+	for (auto obj : objects_) {
+		//for (auto obj : objs) {
+			obj->Update();
+		//}
 	}
 
 	//apple_->Update();
@@ -101,8 +105,12 @@ void PlayScene::Draw()
 	for (auto& c : cpu_)c->Draw();
 	player_->Draw();
 
-	for (auto [id, obj] : objects_) {
-		obj->Draw();
+	//sort(objects_,)
+
+	for (auto obj : objects_) {
+		//for (auto obj : objs) {
+			obj->Draw();
+		//}
 	}
 
 	for (auto UI : UIs_) {
@@ -120,7 +128,11 @@ void PlayScene::Release()
 
 	for (auto& c : cpu_)c->Release();
 	player_->Release();
-	for (auto [id, obj] : objects_) {
-		obj->Release();
+	for (auto obj : objects_) {
+		//for (auto obj : objs) {
+			obj->Release();
+		//}
 	}
+
+	objects_.clear();
 }

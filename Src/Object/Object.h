@@ -25,12 +25,16 @@ public:
 	void SetAngle(const float& angle) { angle_ = angle; };
 	void SetSize(const float& size) { size_ = size; };
 
+	[[nodiscard]] float GetFootPos()const;
+
 
 protected:
 
 	Vector2F pos_;
 	float angle_;
 	float size_ = 1.0f;
+
+	Vector2F imgSize_;
 
 	OBJECT_ID objectID_;
 };

@@ -27,15 +27,21 @@ void Car::Update(void)
 {
 	pos_ += moveDir_ * MOVE_POW;
 
-	if (isCheckOffScreen_ &&
-		Utility::IsIncludedInArea(1280.0f, 720.0f, Vector2F(640.0f, 360.0f), pos_)) {
-
+	if (!isCheckOffScreen_){
+		if (Utility::IsIncludedInArea(1280.0f, 720.0f, Vector2F(640.0f, 360.0f), pos_)) {
+			isCheckOffScreen_ = true;
+		}
 	}
-
+	else {
+		if (!Utility::IsIncludedInArea(1280.0f, 720.0f, Vector2F(640.0f, 360.0f), pos_)) {
+			state_ = STATE::END;
+		}
+	}
 }
 
 void Car::Draw(void)
 {
+	if (state_ != STATE::MOVE)return;
 	DrawRotaGraph(pos_.x, pos_.y, size_, angle_, img_, true);
 }
 
