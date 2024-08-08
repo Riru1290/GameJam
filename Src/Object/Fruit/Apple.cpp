@@ -14,6 +14,7 @@ void Apple::Init(void)
 {
 
 	img_ = LoadGraph("Data/Img/Fruit/Apple Red.png");
+	GetGraphSize(img_, &imgSize_.x, &imgSize_.y);
 	size_ = 3.0f;
 	angle_ = 0.0f;
 }

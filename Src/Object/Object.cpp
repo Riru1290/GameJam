@@ -26,6 +26,6 @@ void Object::Release(void)
 
 float Object::GetFootPos() const
 {
-    float foosPos = pos_.y + imgSize_.y / 2.0f;
+    float foosPos = pos_.y + (imgSize_.y / 2.0f * size_);
     return foosPos;
 }

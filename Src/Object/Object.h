@@ -34,7 +34,7 @@ protected:
 	float angle_;
 	float size_ = 1.0f;
 
-	Vector2F imgSize_;
+	Vector2 imgSize_;
 
 	OBJECT_ID objectID_;
 };

@@ -27,6 +27,7 @@
     <ClCompile Include="Src\Common\Vector2F.cpp" />
     <ClCompile Include="Src\Object\Stage.cpp" />
     <ClCompile Include="Src\UI\UIApple.cpp" />
+    <ClCompile Include="Src\Object\Effect\EffectBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Object\Car\Car.h" />
@@ -57,5 +58,6 @@
     <ClInclude Include="Src\Common\Vector2F.h" />
     <ClInclude Include="Src\Object\Stage.h" />
     <ClInclude Include="Src\UI\UIApple.h" />
+    <ClInclude Include="Src\Object\Effect\EffectBase.h" />
   </ItemGroup>
 </Project>

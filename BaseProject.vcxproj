@@ -34,6 +34,7 @@
     </ClCompile>
     <ClCompile Include="Src\Object\Common\Animation2DController.cpp" />
     <ClCompile Include="Src\Object\CPUBase.cpp" />
+    <ClCompile Include="Src\Object\Effect\EffectBase.cpp" />
     <ClCompile Include="Src\Object\Fruit\Apple.cpp" />
     <ClCompile Include="Src\Object\Object.cpp" />
     <ClCompile Include="Src\Object\Player.cpp" />
@@ -62,6 +63,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Src\Object\Common\Animation2DController.h" />
     <ClInclude Include="Src\Object\CPUBase.h" />
+    <ClInclude Include="Src\Object\Effect\EffectBase.h" />
     <ClInclude Include="Src\Object\Fruit\Apple.h" />
     <ClInclude Include="Src\Object\Object.h" />
     <ClInclude Include="Src\Object\Player.h" />

@@ -53,6 +53,7 @@ void PlayScene::Init()
 	appleSpawnPos_[2] = { 200.0f,500.0f };
 	appleSpawnPos_[3] = { 1000.0f,200.0f };
 
+	appleNum_ = 0;
 	for (int i = 0; i < APPLE_NUM_MAX; i++) {
 		shared_ptr<Object> apple = make_shared<Apple>(appleSpawnPos_[i]);
 		apple->Init();
@@ -71,7 +72,8 @@ void PlayScene::Init()
 
 void PlayScene::Update()
 {
-	if (MyTimer.IsEndTimer("GAME_TIME")) {
+	if (MyTimer.IsEndTimer("GAME_TIME") || 
+		appleNum_ <= 0) {
 		SceneMng.ChangeScene(SCENE_ID::ANSWER);
 	}
 
@@ -92,8 +94,6 @@ void PlayScene::Update()
 	for (auto obj : objects_) {
 		obj->Update();
 	}
-
-
 }
 
 void PlayScene::Draw()

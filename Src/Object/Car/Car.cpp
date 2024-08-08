@@ -7,10 +7,12 @@ Car::Car()
 	moveDir_ = {};
 
 
+
 	int radCarNo = GetRand(_countof(CAR_TYPE_SRC) - 1);
 
 	img_ = ResourceManager::GetInstance().Load(CAR_TYPE_SRC[radCarNo]).handleId_;
 
+	GetGraphSize(img_, &imgSize_.x, &imgSize_.y);
 
 	spawnInfoHor_ = { pair(Vector2F(-100.0f,300.0f),Vector2F(1.0f,0.0f)),
 					  pair(Vector2F(1300.0f,600.0f),Vector2F(-1.0f,0.0f)) };
