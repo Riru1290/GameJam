@@ -1,8 +1,5 @@
 #include"../../pch.h"
-#include"../Application.h"
 #include"../Utility/Utility.h"
-#include"../Manager/ResourceManager.h"
-#include"../Manager/InputManager.h"
 #include "CharacterBase.h"
 
 CharacterBase::CharacterBase(void)
