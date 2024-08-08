@@ -29,7 +29,7 @@ private:
 	vector<shared_ptr<CPUBase>> cpu_;
 	shared_ptr<Player> player_;
 	shared_ptr<Stage> stage_;
-	unordered_map<OBJECT_ID,shared_ptr<Object>> objects_;
+	//unordered_map<OBJECT_ID,shared_ptr<Object>> objects_;
 	//unordered_map<OBJECT_ID,vector<shared_ptr<Object>>> objects_;
 	vector<shared_ptr<Object>> objects_;
 
