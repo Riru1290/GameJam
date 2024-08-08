@@ -19,8 +19,9 @@ CharacterBase::~CharacterBase(void)
 {
 }
 
-void CharacterBase::Init(void)
+void CharacterBase::Init(int* image)
 {
+	img_ = image;
 	SetParam();
 	//アニメーションを向いてる方向に初期化
 	animIdx_ = ANIM_NUM * static_cast<int>(dir_) + ANIM_CENTER;

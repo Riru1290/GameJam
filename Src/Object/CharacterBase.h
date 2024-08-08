@@ -63,7 +63,7 @@ public:
 	CharacterBase(void);
 	virtual ~CharacterBase(void);
 
-	virtual void Init(void);
+	virtual void Init(int* image);
 	virtual void Update(void);
 	virtual void Draw(void);
 	void Release(void);
