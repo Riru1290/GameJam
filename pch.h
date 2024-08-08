@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <set>
 #include <unordered_map>
 #include <chrono>
 
@@ -17,4 +18,7 @@ using namespace std;
 #include "Src/Utility/Timer.h"
 #include "Src/Utility/Utility.h"
 
+// スクリーンサイズ
+static constexpr int SCREEN_SIZE_X = 1280;
+static constexpr int SCREEN_SIZE_Y = 720;
 

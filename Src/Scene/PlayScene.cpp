@@ -74,7 +74,7 @@ void PlayScene::Update()
 	if (MyTimer.IsEndTimer("CAR_SPAWN_TIME")) {
 		MyTimer.Restart("CAR_SPAWN_TIME");
 		shared_ptr<Object> tempCar;
-		tempCar = make_shared<Car>(Vector2F(-1.0f,0.0f), Vector2F(1500.0f,500.0f));
+		tempCar = make_shared<Car>();
 		//auto& cars = objects_[OBJECT_ID::CAR];
 		objects_.emplace_back(tempCar);
 	}

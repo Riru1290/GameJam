@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Common/ResourceManager.h"
 #include "../Object.h"
 
 class Car : public Object
@@ -11,7 +12,7 @@ public:
 		END
 	};
 
-	Car(Vector2F moveDir,Vector2F pos);
+	Car();
 	~Car();
 
 	void Init(void) override;
@@ -23,14 +24,35 @@ private:
 
 
 
+	static constexpr ResourceManager::SRC CAR_TYPE_SRC[] =
+	{
+		ResourceManager::SRC::CAR_1,
+		ResourceManager::SRC::CAR_2,
+		ResourceManager::SRC::CAR_3,
+		ResourceManager::SRC::CAR_4,
+		ResourceManager::SRC::CAR_5,
+		ResourceManager::SRC::CAR_6,
+	};
+
+
+
+
+
 	int img_;
 
-	static constexpr float MOVE_POW = (15.0f);
+	static constexpr float MOVE_POW = (8.0f);
 
 	Vector2F moveDir_;
 
 	STATE state_;
 
 	bool isCheckOffScreen_;
+
+	bool revFlagX_;
+	bool revFlagY_;
+
+	// ç¿ïWÅAï˚å¸
+	vector<pair<Vector2F, Vector2F>> spawnInfoHor_;	// â°
+	vector<pair<Vector2F, Vector2F>> spawnInfoVer_;	// èc
 };
 

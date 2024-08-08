@@ -29,6 +29,42 @@ void ResourceManager::Init(void)
 
 #pragma region IMG
 
+	// 車
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/car.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_1, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/car2.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_2, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/bus.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_3, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/bus2.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_4, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/car3.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_5, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Obstacle/police.png"
+	);
+	resourcesMap_.emplace(SRC::CAR_6, move(res));
 	
 #pragma endregion
 

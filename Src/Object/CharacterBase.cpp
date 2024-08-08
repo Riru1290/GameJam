@@ -23,7 +23,7 @@ void CharacterBase::Init(int* image)
 {
 	img_ = image;
 	move_ = 2.0f;
-	pos_ = Vector2F{ Application::SCREEN_SIZE_X / 2,Application::SCREEN_SIZE_Y / 2 };
+	pos_ = Vector2F{ SCREEN_SIZE_X / 2,SCREEN_SIZE_Y / 2 };
 	SetParam();
 	//アニメーションを向いてる方向に初期化
 	animIdx_ = ANIM_NUM * static_cast<int>(dir_) + ANIM_CENTER;
