@@ -145,7 +145,7 @@ void AnswerScene::Draw()
 {
 	DrawGraph(0, 0, imgBg_, true);
 
-	DrawFormatString(0, 0, 0xffffff, "AnswerScene");
+	//DrawFormatString(0, 0, 0xffffff, "AnswerScene");
 
 
 	DrawRotaGraph(SCREEN_SIZE_X / 2.0f, SCREEN_SIZE_Y / 2.0f - 250.0f, 1.5f, 0.0f, imgSelect_, true);
