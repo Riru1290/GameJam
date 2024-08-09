@@ -23,7 +23,6 @@ void TitleScene::Update()
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
 		SoundManager::GetInstance().PlaySndEnter();
 		SoundManager::GetInstance().StopBgmOfTitle();
-		SceneMng.ChangeScene(SCENE_ID::PLAY);
 		SceneMng.ChangeScene(SCENE_ID::TUTORIAL);
 	}
 }

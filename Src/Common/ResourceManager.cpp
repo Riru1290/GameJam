@@ -210,7 +210,7 @@ void ResourceManager::Init(void)
 		Resource::TYPE::IMG,
 		"Data/Img/Bild/bild12.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_12, move(res));
+	resourcesMap_.emplace(SRC::BILD_12, move(res));
 
 
 	// チュートリアル

@@ -62,8 +62,8 @@ AnswerScene::AnswerScene()
 
 	selectedNo_ = 0;
 
-	changeFlag_ = false;
-	isResult_ = false;
+	changeFlag_ = !SceneMng.IsSuccess();
+	isResult_ = !SceneMng.IsSuccess();
 }
 
 void AnswerScene::Init()

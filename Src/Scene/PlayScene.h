@@ -44,9 +44,11 @@ private:
 	// UI
 	vector<shared_ptr<UIBase>> UIs_;
 
+	// 取得するリンゴ
+	static constexpr int APPLE_GOAL_NUM = (3);
 
-
-	static constexpr int APPLE_NUM_MAX = (4);
+	// ステージ上に出現させるリンゴ
+	static constexpr int APPLE_NUM_MAX = (5);
 	Vector2F appleSpawnPos_[APPLE_NUM_MAX];
 
 	// 現在残っているアップルの数

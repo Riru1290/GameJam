@@ -20,5 +20,7 @@ private:
 	int imgs_[PAGE_NUM];
 
 	int nowPage_;
+
+	vector<int*> charaImg_;
 };
 

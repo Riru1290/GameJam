@@ -23,6 +23,16 @@ public:
 	[[nodiscard]] const int& GetLupinNo()const { return lupinNo_; };
 	void SetLupinNo(int no) { lupinNo_ = no; };
 
+	static constexpr int CHARA_TYPE_NUM = (24);
+
+	// ‰ö“‰æ‘œ”Ô†
+	[[nodiscard]] const int& GetImageLupinNo()const { return imgLupinNo_; };
+	void SetImageLupinNo(int no) { imgLupinNo_ = no; };
+
+	// ‰ö“‚ª“‚İ‚ğ¬Œ÷‚³‚¹‚½‚©
+	[[nodiscard]] const bool& IsSuccess()const { return isSuccess_; };
+	void SetIsSuccess(bool isSuccess) { isSuccess_ = isSuccess; };
+
 	// ‚æ‚­‚È‚¢‚¯‚Ç‹–‚µ‚Ä
 	void GetApple(weak_ptr<Apple> apple);
 
@@ -47,5 +57,11 @@ private:
 
 	// ‰ö“”Ô†
 	int lupinNo_;
+
+	// ‰ö“‰æ‘œ”Ô†
+	int imgLupinNo_;
+
+	// ‰ö“‚ª“‚İ‚ğ¬Œ÷‚³‚¹‚½‚©
+	bool isSuccess_;
 };
 

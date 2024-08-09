@@ -14,10 +14,10 @@ Car::Car()
 
 	GetGraphSize(img_, &imgSize_.x, &imgSize_.y);
 
-	spawnInfoHor_ = { pair(Vector2F(-100.0f,300.0f),Vector2F(1.0f,0.0f)),
-					  pair(Vector2F(1300.0f,600.0f),Vector2F(-1.0f,0.0f)) };
-	spawnInfoVer_ = { pair(Vector2F(300.0f,-100.0f),Vector2F(0.0f,1.0f)),
-					  pair(Vector2F(600.0f,800.0f),Vector2F(0.0f,-1.0f)) };
+	spawnInfoHor_ = { pair(Vector2F(-100.0f,100.0f),Vector2F(1.0f,0.0f)),
+					  pair(Vector2F(1300.0f,570.0f),Vector2F(-1.0f,0.0f)) };
+	spawnInfoVer_ = { pair(Vector2F(160.0f,-100.0f),Vector2F(0.0f,1.0f)),
+					  pair(Vector2F(630.0f,800.0f),Vector2F(0.0f,-1.0f)) };
 
 	if (CAR_TYPE_SRC[radCarNo] == ResourceManager::SRC::CAR_5 ||
 		CAR_TYPE_SRC[radCarNo] == ResourceManager::SRC::CAR_6) {

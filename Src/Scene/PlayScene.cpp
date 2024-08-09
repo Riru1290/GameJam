@@ -50,13 +50,13 @@ void PlayScene::Init()
 {
 	MyTimer.SetTimer("GAME_TIME", 60.0f);
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
-	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
+	MyTimer.SetTimer("CAR_SPAWN_TIME", 1.0f,true);
 
 	//BGM‚ðŠJŽn
 	SoundManager::GetInstance().PlayBgmOfGame();
 
 
-	int playerNum = GetRand(charaImg_.size() - 1);
+	int playerNum = SceneMng.GetImageLupinNo();
 	lupinNo_ = playerNum;
 	for (int i = 0; i < charaImg_.size(); i++)
 	{
@@ -240,21 +240,20 @@ void PlayScene::Init()
 		objects_.emplace_back(bill);
 	}
 
-	appleSpawnPos_[0] = { 300.0f,100.0f};
-	appleSpawnPos_[1] = { 600.0f,600.0f };
-	appleSpawnPos_[2] = { 300.0f,600.0f };
-	appleSpawnPos_[3] = { 600.0f,100.0f };
+	appleSpawnPos_[0] = { 150.0f,300.0f};
+	appleSpawnPos_[1] = { 1200.0f,600.0f };
+	appleSpawnPos_[2] = { 400.0f,600.0f };
+	appleSpawnPos_[3] = { 900.0f,100.0f };
+	appleSpawnPos_[4] = { 600.0f,300.0f };
 
-	appleNum_ = 0;
+	appleNum_ = APPLE_GOAL_NUM;
 	for (int i = 0; i < APPLE_NUM_MAX; i++) {
 		shared_ptr<Object> apple = make_shared<Apple>(appleSpawnPos_[i]);
 		apple->Init();
 		objects_.emplace_back(apple);
 
 		apples_.emplace_back(dynamic_pointer_cast<Apple>(apple));
-		appleNum_++;
 	}
-
 
 	shared_ptr<UIBase> tempUI;
 	tempUI = make_shared<UITime>();
@@ -274,11 +273,17 @@ void PlayScene::Init()
 
 void PlayScene::Update()
 {
-	if (MyTimer.IsEndTimer("GAME_TIME") || 
-		appleNum_ <= 0) {
+	if (MyTimer.IsEndTimer("GAME_TIME")) {
 		SoundManager::GetInstance().StopBgmOfGame();
 		SceneMng.ChangeScene(SCENE_ID::ANSWER);
 		SceneMng.SetLupinNo(lupinNo_);
+		SceneMng.SetIsSuccess(false);
+	}
+	else if (appleNum_ <= 0) {
+		SoundManager::GetInstance().StopBgmOfGame();
+		SceneMng.ChangeScene(SCENE_ID::ANSWER);
+		SceneMng.SetLupinNo(lupinNo_);
+		SceneMng.SetIsSuccess(true);
 	}
 
 	if (MyTimer.IsEndTimer("GAME_START_TIME") &&
@@ -286,10 +291,10 @@ void PlayScene::Update()
 		MyTimer.Start("GAME_TIME");
 	}
 
-	//for (auto& c : cpu_)c->Update();
-	//player_->Update();
+
 	if (MyTimer.IsEndTimer("CAR_SPAWN_TIME")) {
 		MyTimer.Restart("CAR_SPAWN_TIME");
+
 		shared_ptr<Object> tempCar;
 		tempCar = make_shared<Car>();
 		objects_.emplace_back(tempCar);
@@ -374,9 +379,6 @@ void PlayScene::Draw()
 	DrawFormatString(0, 40, 0xffffff, "GameStartTime : %f", MyTimer.GetTime("GAME_START_TIME"));
 
 
-	//for (auto& c : cpu_)c->Draw();
-	//player_->Draw();
-
 	stage_->Draw();
 	sort(objects_.begin(), objects_.end(), [](weak_ptr<Object> a, weak_ptr<Object> b) {
 		return a.lock()->GetFootPos() < b.lock()->GetFootPos();
@@ -398,8 +400,6 @@ void PlayScene::Release()
 	MyTimer.Delete("GAME_START_TIME");
 	StopJoypadVibration(DX_INPUT_PAD1, -1);
 
-	//for (auto& c : cpu_)c->Release();
-	//player_->Release();
 	for (auto obj : objects_) {
 		obj->Release();
 	}
@@ -438,6 +438,4 @@ void PlayScene::CheckNearFruit(void)
 
 	if(ret)player_.lock()->SetNearFruit(true,apples_[i]);
 	else player_.lock()->SetNearFruit(false, apples_[i]);
-
-
 }

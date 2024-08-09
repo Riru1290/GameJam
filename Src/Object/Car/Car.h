@@ -38,12 +38,9 @@ private:
 	};
 
 
-
-
-
 	int img_;
 
-	static constexpr float MOVE_POW = (8.0f);
+	static constexpr float MOVE_POW = (5.0f);
 
 	Vector2F moveDir_;
 
