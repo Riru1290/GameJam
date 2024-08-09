@@ -3,6 +3,7 @@
 Building::Building(Vector2F pos, ResourceManager::SRC src)
 {
 	pos_ = pos;
+	size_ = 2.0f;
 	img_ = ResourceManager::GetInstance().Load(src).handleId_;
 	GetGraphSize(img_, &imgSize_.x, &imgSize_.y);
 }
@@ -21,7 +22,7 @@ void Building::Update(void)
 
 void Building::Draw(void)
 {
-	DrawRotaGraph(pos_.x, pos_.y, 1.0f, 0.0f, img_, true);
+	DrawRotaGraph(pos_.x, pos_.y, size_, 0.0f, img_, true);
 }
 
 void Building::Release(void)
