@@ -64,6 +64,8 @@ AnswerScene::AnswerScene()
 
 	changeFlag_ = !SceneMng.IsSuccess();
 	isResult_ = !SceneMng.IsSuccess();
+
+
 }
 
 void AnswerScene::Init()
@@ -94,6 +96,43 @@ void AnswerScene::Init()
 
 	shared_ptr<UIBase> tempUI = make_shared<UIBasic>(Vector2F(SCREEN_SIZE_X / 2.0f, 650.0f), 1.0f, "Data/Img/UI/you are lupin.png");
 	UIs_.emplace_back(tempUI);
+
+	if (isResult_) {
+		string filePath = "";
+		int lupinNo = SceneMng.GetLupinNo();
+		if (selectedNo_ == lupinNo) {
+			filePath = "Data/Img/UI/DetectiveWin.png";
+		}
+		else {
+
+			filePath = "Data/Img/UI/lupinWin.png";
+		}
+
+		UIs_.clear();
+
+		shared_ptr<UIBase> tempUI;
+		Vector2F pos = { SCREEN_SIZE_X / 2.0f,SCREEN_SIZE_Y / 2.0f - 50.0f };
+		tempUI = make_shared<UIMove>(pos - Vector2F(0.0f, 1000.0f), pos, 3.0f, filePath.c_str());
+		UIs_.emplace_back(tempUI);
+
+		Vector2F lpos = { SCREEN_SIZE_X / 2.0f - 200.0f,SCREEN_SIZE_Y / 2.0f + 200.0f };
+		tempUI = make_shared<UIFade>(
+			lpos,
+			3.0f,
+			0.5f, 0.0f, 1.0f, false,
+			"Data/Img/UI/gotoTitle.png"
+		);
+		UIs_.emplace_back(tempUI);
+
+		Vector2F rpos = { SCREEN_SIZE_X / 2.0f + 200.0f,SCREEN_SIZE_Y / 2.0f + 200.0f };
+		tempUI = make_shared<UIFade>(
+			rpos,
+			3.0f,
+			0.5f, 0.0f, 1.0f, false,
+			"Data/Img/UI/continue.png"
+		);
+		UIs_.emplace_back(tempUI);
+	}
 }
 
 void AnswerScene::Update()
