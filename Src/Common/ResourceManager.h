@@ -87,6 +87,9 @@ public:
 		//効果音
 		
 		//BGM
+		TITLE_BGM,
+		GAME_BGM,
+		ANSWER_BGM,
 		
 		//エフェクト
 	};

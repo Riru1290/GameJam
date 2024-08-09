@@ -511,6 +511,26 @@ void ResourceManager::Init(void)
 
 #pragma region SOUND
 
+	//タイトル
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Title.mp3"
+	);
+	resourcesMap_.emplace(SRC::TITLE_BGM, move(res));
+
+	//ゲーム
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Think.mp3"
+	);
+	resourcesMap_.emplace(SRC::ANSWER_BGM, move(res));
+
+	//アンサー
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Game.mp3"
+	);
+	resourcesMap_.emplace(SRC::GAME_BGM, move(res));
 	
 #pragma endregion
 }

@@ -1,5 +1,6 @@
 #include "../Object/Fruit/Apple.h"
 #include"../Common/ResourceManager.h"
+#include"../Common/SoundManager.h"
 #include"../Object/CharacterBase.h"
 #include"../Object/CPUBase.h"
 #include"../Object/Player.h"
@@ -50,6 +51,9 @@ void PlayScene::Init()
 	MyTimer.SetTimer("GAME_TIME", 60.0f);
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
 	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
+
+	//BGM‚ðŠJŽn
+	SoundManager::GetInstance().PlayBgmOfGame();
 
 
 	int playerNum = GetRand(charaImg_.size() - 1);
@@ -196,6 +200,7 @@ void PlayScene::Update()
 {
 	if (MyTimer.IsEndTimer("GAME_TIME") || 
 		appleNum_ <= 0) {
+		SoundManager::GetInstance().StopBgmOfGame();
 		SceneMng.ChangeScene(SCENE_ID::ANSWER);
 		SceneMng.SetLupinNo(lupinNo_);
 	}

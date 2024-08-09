@@ -1,4 +1,5 @@
 #include "../Common/InputManager.h"
+#include "../Common/SoundManager.h"
 #include "../UI/UIBlink.h"
 #include "SceneManager.h"
 #include "TitleScene.h"
@@ -13,12 +14,14 @@ void TitleScene::Init()
 	shared_ptr<UIBase> tempUI;
 	tempUI = make_shared<UIBlink>(Vector2F(SCREEN_SIZE_X / 2.0f, SCREEN_SIZE_Y / 2.0f + 200.0f), "Data/Img/UI/pressB.png");
 	UIs_.emplace_back(tempUI);
+	SoundManager::GetInstance().PlayBgmOfTitle();
 }
 
 void TitleScene::Update()
 {
 	auto& input = InputManager::GetInstance();
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
+		SoundManager::GetInstance().StopBgmOfTitle();
 		SceneMng.ChangeScene(SCENE_ID::PLAY);
 	}
 }
