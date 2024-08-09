@@ -214,6 +214,7 @@ void PlayScene::Draw()
 	//for (auto& c : cpu_)c->Draw();
 	//player_->Draw();
 
+	stage_->Draw();
 	sort(objects_.begin(), objects_.end(), [](weak_ptr<Object> a, weak_ptr<Object> b) {
 		return a.lock()->GetFootPos() < b.lock()->GetFootPos();
 		});
@@ -226,7 +227,6 @@ void PlayScene::Draw()
 		UI->Draw();
 	}
 
-	stage_->Draw();
 }
 
 void PlayScene::Release()

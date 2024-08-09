@@ -317,7 +317,7 @@ void ResourceManager::Init(void)
 	//マップ
 	res = make_unique<Resource>(
 		Resource::TYPE::IMGS,
-		"Data/Image/Stage/tile.png",
+		"Data/Img/Stage/tile.png",
 		Stage::TILE_X,
 		Stage::TILE_Y,
 		Stage::TILE_SIZE,
