@@ -3,6 +3,7 @@
 #include "Scene/SceneManager.h"
 #include"Common/ResourceManager.h"
 #include"Common/InputManager.h"
+#include"Common/SoundManager.h"
 #include "Application.h"
 
 Application* Application::instance_ = nullptr;
@@ -57,6 +58,9 @@ void Application::Init(void)
 	//ResourceManager‚Ì‹N“®
 	ResourceManager::CreateInstance();
 
+	//SoundManager‚Ì‰Šú‰»
+	SoundManager::CreateInstance();
+
 }
 
 void Application::Run(void)
@@ -80,6 +84,9 @@ void Application::Run(void)
 
 void Application::Destroy(void)
 {
+	//SoundManager‚ğI—¹‚·‚é
+	SoundManager::GetInstance().Relese();
+
 	//ResourceManager‚ğI—¹‚·‚é
 	ResourceManager::GetInstance().Release();
 
