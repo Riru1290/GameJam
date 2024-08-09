@@ -66,6 +66,79 @@ void ResourceManager::Init(void)
 	);
 	resourcesMap_.emplace(SRC::CAR_6, move(res));
 	
+	//建物
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild1.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_1, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild2.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_2, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild3.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_3, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild4.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_4, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild5.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_5, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild6.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_6, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild7.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_7, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild8.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_8, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild9.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_9, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild10.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_10, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild11.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_11, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Bild/bild12.png"
+	);
+	resourcesMap_.emplace(SRC::BILD_12, move(res));
+
 #pragma endregion
 
 

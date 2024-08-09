@@ -20,6 +20,7 @@ public:
 	{
 		//画像
 		MAP_TILE,
+
 		//キャラクター
 		CHARACTER_1,
 		CHARACTER_2,
@@ -61,6 +62,20 @@ public:
 		CAR_4,
 		CAR_5,
 		CAR_6,
+
+		//建物
+		BILD_1,
+		BILD_2,
+		BILD_3,
+		BILD_4,
+		BILD_5,
+		BILD_6,
+		BILD_7,
+		BILD_8,
+		BILD_9,
+		BILD_10,
+		BILD_11,
+		BILD_12,
 
 		// エフェクト
 		EFFECT_1,
