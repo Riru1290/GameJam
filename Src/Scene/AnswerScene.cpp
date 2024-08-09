@@ -65,7 +65,7 @@ AnswerScene::AnswerScene()
 	changeFlag_ = !SceneMng.IsSuccess();
 	isResult_ = !SceneMng.IsSuccess();
 
-
+	MyTimer.SetTimer("RESULT_TIME", 3.0f);
 }
 
 void AnswerScene::Init()
@@ -125,6 +125,8 @@ void AnswerScene::Init()
 			"Data/Img/UI/continue.png"
 		);
 		UIs_.emplace_back(tempUI);
+
+		MyTimer.Restart("RESULT_TIME");
 	}
 }
 
@@ -180,6 +182,8 @@ void AnswerScene::Release()
 	DeleteGraph(imgPin_);
 	DeleteGraph(imgSelect_);
 	DeleteGraph(imgBg_);
+
+	MyTimer.Delete("RESULT_TIME");
 }
 
 void AnswerScene::SelectLupin()
@@ -229,6 +233,8 @@ void AnswerScene::SelectLupin()
 			"Data/Img/UI/continue.png"
 		);
 		UIs_.emplace_back(tempUI);
+
+		MyTimer.Restart("RESULT_TIME");
 
 		return;
 	}
@@ -288,6 +294,8 @@ void AnswerScene::SelectLupin()
 
 void AnswerScene::Result()
 {
+	if (MyTimer.InProgress("RESULT_TIME"))return;
+
 	auto& input = InputManager::GetInstance();
 	auto pad = input.GetJPadInputState(InputManager::JOYPAD_NO::PAD1);
 	auto& snM = SoundManager::GetInstance();
