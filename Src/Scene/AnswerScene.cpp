@@ -98,15 +98,7 @@ void AnswerScene::Init()
 	UIs_.emplace_back(tempUI);
 
 	if (isResult_) {
-		string filePath = "";
-		int lupinNo = SceneMng.GetLupinNo();
-		if (selectedNo_ == lupinNo) {
-			filePath = "Data/Img/UI/DetectiveWin.png";
-		}
-		else {
-
-			filePath = "Data/Img/UI/lupinWin.png";
-		}
+		string filePath =  "Data/Img/UI/DetectiveWin.png";
 
 		UIs_.clear();
 

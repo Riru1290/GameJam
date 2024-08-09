@@ -240,11 +240,11 @@ void PlayScene::Init()
 		objects_.emplace_back(bill);
 	}
 
-	appleSpawnPos_[0] = { 150.0f,300.0f};
-	appleSpawnPos_[1] = { 1200.0f,600.0f };
-	appleSpawnPos_[2] = { 400.0f,600.0f };
-	appleSpawnPos_[3] = { 900.0f,100.0f };
-	appleSpawnPos_[4] = { 600.0f,300.0f };
+	appleSpawnPos_[0] = { 150.0f,400.0f};
+	appleSpawnPos_[1] = { 1200.0f,550.0f };
+	appleSpawnPos_[2] = { 650.0f,600.0f };
+	appleSpawnPos_[3] = { 350.0f,100.0f };
+	appleSpawnPos_[4] = { 800.0f,300.0f };
 
 	appleNum_ = APPLE_GOAL_NUM;
 	for (int i = 0; i < APPLE_NUM_MAX; i++) {
