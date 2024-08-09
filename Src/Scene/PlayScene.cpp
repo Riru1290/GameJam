@@ -277,7 +277,6 @@ void PlayScene::CheckNearFruit(void)
 	int i = -1;
 	for (auto& app : appleSpawnPos_)
 	{
-
 		i++;
 		auto diff = Utility::Distance(player_.lock()->GetPos().ToVector2(), app.ToVector2());
 		if (diff < APPLE_COL && apples_[i].lock()->IsAlive())
