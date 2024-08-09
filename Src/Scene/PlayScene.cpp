@@ -82,6 +82,11 @@ void PlayScene::Init()
 			Vector2F(0.0f,0.0f),
 			ResourceManager::SRC::BILL_1);
 		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(100.0f, 100.0f),
+			ResourceManager::SRC::BILL_2);
+		objects_.emplace_back(bill);
 	}
 
 	appleSpawnPos_[0] = { 300.0f,100.0f};
