@@ -5,6 +5,7 @@
 #include"../Object/Player.h"
 #include"../Object/Stage.h"
 #include "../Object/Car/Car.h"
+#include "../Object/Building/Building.h"
 #include "../Object/Effect/EffectBase.h"
 #include "../UI/UITime.h"
 #include "../UI/UIApple.h"
@@ -75,6 +76,13 @@ void PlayScene::Init()
 	stage_ = make_shared<Stage>();
 	stage_->Init();
 
+	// ƒrƒ‹
+	{
+		shared_ptr<Object> bill = make_shared<Building>(
+			Vector2F(0.0f,0.0f),
+			ResourceManager::SRC::BILL_1);
+		objects_.emplace_back(bill);
+	}
 
 	appleSpawnPos_[0] = { 300.0f,100.0f};
 	appleSpawnPos_[1] = { 600.0f,600.0f };

@@ -65,6 +65,79 @@ void ResourceManager::Init(void)
 		"Data/Img/Obstacle/police.png"
 	);
 	resourcesMap_.emplace(SRC::CAR_6, move(res));
+
+	// 建物
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building1.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_1, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building2.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_2, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building3.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_3, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building4.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_4, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building5.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_5, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building6.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_6, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building7.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_7, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building8.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_8, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building9.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_9, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building10.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_10, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building11.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_11, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Building/building12.png"
+	);
+	resourcesMap_.emplace(SRC::BILL_12, move(res));
 	
 	//建物
 	res = make_unique<Resource>(
