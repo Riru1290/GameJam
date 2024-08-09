@@ -37,9 +37,13 @@ void SoundManager::Init(void)
 	titleBgm_ = rsM.Load(ResourceManager::SRC::TITLE_BGM).handleId_;
 	gameBgm_ = rsM.Load(ResourceManager::SRC::GAME_BGM).handleId_;
 	answerBgm_ = rsM.Load(ResourceManager::SRC::ANSWER_BGM).handleId_;
+	lupinBgm_ = rsM.Load(ResourceManager::SRC::LUPIN_WIN_BGM).handleId_;
+	zenigataBgm_ = rsM.Load(ResourceManager::SRC::ZENIGATA_WIN_BGM).handleId_;
 
 	ChangeVolumeSoundMem(255 * 70 / 100, titleBgm_);
 	ChangeVolumeSoundMem(255 * 70 / 100, gameBgm_);
+	ChangeVolumeSoundMem(255 * 80 / 100, lupinBgm_);
+	ChangeVolumeSoundMem(255 * 80 / 100, zenigataBgm_);
 
 	answerSnd_ = rsM.Load(ResourceManager::SRC::ANSWER_SND).handleId_;
 	enterSnd_ = rsM.Load(ResourceManager::SRC::ENTER_SND).handleId_;
@@ -56,6 +60,8 @@ void SoundManager::Relese(void)
 	DeleteSoundMem(titleBgm_);
 	DeleteSoundMem(gameBgm_);
 	DeleteSoundMem(answerBgm_);
+	DeleteSoundMem(lupinBgm_);
+	DeleteSoundMem(zenigataBgm_);
 	DeleteSoundMem(answerSnd_);
 	DeleteSoundMem(enterSnd_);
 	DeleteSoundMem(moveSnd_);
@@ -90,6 +96,26 @@ void SoundManager::PlayBgmOfAnswer(void)
 void SoundManager::StopBgmOfAnswer(void)
 {
 	StopSoundMem(answerBgm_);
+}
+
+void SoundManager::PlayBgmOfLupin(void)
+{
+	PlaySoundMem(lupinBgm_, DX_PLAYTYPE_LOOP);
+}
+
+void SoundManager::StopBgmOfLupin(void)
+{
+	StopSoundMem(lupinBgm_);
+}
+
+void SoundManager::PlayBgmOfZenigata(void)
+{
+	PlaySoundMem(zenigataBgm_, DX_PLAYTYPE_LOOP);
+}
+
+void SoundManager::StopBgmOfZenigata(void)
+{
+	StopSoundMem(zenigataBgm_);
 }
 
 void SoundManager::PlaySndAnswer(void)

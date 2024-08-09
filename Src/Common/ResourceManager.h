@@ -101,6 +101,8 @@ public:
 		TITLE_BGM,
 		GAME_BGM,
 		ANSWER_BGM,
+		LUPIN_WIN_BGM,
+		ZENIGATA_WIN_BGM,
 		
 		//エフェクト
 	};

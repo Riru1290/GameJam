@@ -15,6 +15,10 @@ public:
 	void StopBgmOfGame(void);
 	void PlayBgmOfAnswer(void);
 	void StopBgmOfAnswer(void);
+	void PlayBgmOfLupin(void);
+	void StopBgmOfLupin(void);
+	void PlayBgmOfZenigata(void);
+	void StopBgmOfZenigata(void);
 
 	void PlaySndAnswer(void);
 	void PlaySndEnter(void);
@@ -26,6 +30,8 @@ private:
 	int titleBgm_;
 	int gameBgm_;
 	int answerBgm_;
+	int lupinBgm_;
+	int zenigataBgm_;
 
 	int answerSnd_;
 	int enterSnd_;

@@ -98,6 +98,7 @@ void AnswerScene::Init()
 	UIs_.emplace_back(tempUI);
 
 	if (isResult_) {
+		SoundManager::GetInstance().PlayBgmOfZenigata();
 		string filePath =  "Data/Img/UI/DetectiveWin.png";
 
 		UIs_.clear();
@@ -176,8 +177,6 @@ void AnswerScene::Draw()
 
 void AnswerScene::Release()
 {
-	SoundManager::GetInstance().StopBgmOfAnswer();
-
 	DeleteGraph(imgPin_);
 	DeleteGraph(imgSelect_);
 	DeleteGraph(imgBg_);
@@ -191,17 +190,18 @@ void AnswerScene::SelectLupin()
 
 	// Œˆ’è
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1,InputManager::JOYPAD_BTN::RIGHT)) {
-
 		SoundManager::GetInstance().PlaySndAnswer();
+		SoundManager::GetInstance().StopBgmOfAnswer();
 		isResult_ = true;
 
 		string filePath = "";
 		int lupinNo = SceneMng.GetLupinNo();
 		if (selectedNo_ == lupinNo) {
+			SoundManager::GetInstance().PlayBgmOfZenigata();
 			filePath = "Data/Img/UI/DetectiveWin.png";
 		}
 		else {
-
+			SoundManager::GetInstance().PlayBgmOfLupin();
 			filePath = "Data/Img/UI/lupinWin.png";
 		}
 		
@@ -290,12 +290,17 @@ void AnswerScene::Result()
 {
 	auto& input = InputManager::GetInstance();
 	auto pad = input.GetJPadInputState(InputManager::JOYPAD_NO::PAD1);
+	auto& snM = SoundManager::GetInstance();
 
 	// Œˆ’è
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
+		snM.StopBgmOfLupin();
+		snM.StopBgmOfZenigata();
 		SceneMng.ChangeScene(SCENE_ID::TUTORIAL);
 	}
 	else if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::LEFT)) {
+		snM.StopBgmOfLupin();
+		snM.StopBgmOfZenigata();
 		SceneMng.ChangeScene(SCENE_ID::TITLE);
 	}
 }

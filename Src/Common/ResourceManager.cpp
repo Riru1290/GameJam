@@ -592,6 +592,20 @@ void ResourceManager::Init(void)
 		"Data/Snd/Game.mp3"
 	);
 	resourcesMap_.emplace(SRC::GAME_BGM, move(res));
+
+	//怪盗勝利
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/LupinWin.mp3"
+	);
+	resourcesMap_.emplace(SRC::LUPIN_WIN_BGM, move(res));
+
+	//探偵勝利
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/ZeenigataWin.mp3"
+	);
+	resourcesMap_.emplace(SRC::ZENIGATA_WIN_BGM, move(res));
 	
 #pragma endregion
 }
