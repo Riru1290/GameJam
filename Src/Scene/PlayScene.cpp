@@ -159,8 +159,84 @@ void PlayScene::Init()
 		objects_.emplace_back(bill);
 
 		bill = make_shared<Building>(
-			Vector2F(480.0f, 176.0f),
+			Vector2F(464.0f, 176.0f),
+			ResourceManager::SRC::BILD_8);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(544.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(760.0f, 176.0f),
+			ResourceManager::SRC::BILD_9);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(854.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(934.0f, 176.0f),
+			ResourceManager::SRC::BILD_8);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1014.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1232.0f, 176.0f),
 			ResourceManager::SRC::BILD_10);
+		objects_.emplace_back(bill);
+
+
+		bill = make_shared<Building>(
+			Vector2F(32.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(272.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(400.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(528.0f, 432.0f),
+			ResourceManager::SRC::BILD_2);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(744.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(872.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1000.0f, 432.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1216.0f, 432.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1312.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
 		objects_.emplace_back(bill);
 	}
 
