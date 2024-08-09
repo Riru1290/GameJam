@@ -1,5 +1,6 @@
 #include "../Utility/Fader.h"
 #include "TitleScene.h"
+#include "TutorialScene.h"
 #include "PlayScene.h"
 #include "AnswerScene.h"
 #include "SceneManager.h"
@@ -81,6 +82,9 @@ void SceneManager::DoChangeScene()
 	{
 	case SCENE_ID::TITLE:
 		scene_.reset(new TitleScene());
+		break;
+	case SCENE_ID::TUTORIAL:
+		scene_.reset(new TutorialScene());
 		break;
 	case SCENE_ID::PLAY:
 		scene_.reset(new PlayScene());

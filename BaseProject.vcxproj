@@ -44,6 +44,7 @@
     <ClCompile Include="Src\Scene\SceneBase.cpp" />
     <ClCompile Include="Src\Scene\SceneManager.cpp" />
     <ClCompile Include="Src\Scene\TitleScene.cpp" />
+    <ClCompile Include="Src\Scene\TutorialScene.cpp" />
     <ClCompile Include="Src\UI\UIApple.cpp" />
     <ClCompile Include="Src\UI\UIBase.cpp" />
     <ClCompile Include="Src\UI\UIBasic.cpp" />
@@ -82,6 +83,7 @@
     <ClInclude Include="Src\Scene\SceneID.h" />
     <ClInclude Include="Src\Scene\SceneManager.h" />
     <ClInclude Include="Src\Scene\TitleScene.h" />
+    <ClInclude Include="Src\Scene\TutorialScene.h" />
     <ClInclude Include="Src\UI\UIApple.h" />
     <ClInclude Include="Src\UI\UIBase.h" />
     <ClInclude Include="Src\UI\UIBasic.h" />

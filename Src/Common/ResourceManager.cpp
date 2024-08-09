@@ -138,6 +138,38 @@ void ResourceManager::Init(void)
 		"Data/Img/Building/building12.png"
 	);
 	resourcesMap_.emplace(SRC::BILL_12, move(res));
+
+
+	// チュートリアル
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Tutorial/Tutorial1.png"
+	);
+	resourcesMap_.emplace(SRC::TUTORIAL_1, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Tutorial/Tutorial2.png"
+	);
+	resourcesMap_.emplace(SRC::TUTORIAL_2, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Tutorial/Tutorial3.png"
+	);
+	resourcesMap_.emplace(SRC::TUTORIAL_3, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Tutorial/Tutorial4.png"
+	);
+	resourcesMap_.emplace(SRC::TUTORIAL_4, move(res));
+
+	res = make_unique<Resource>(
+		Resource::TYPE::IMG,
+		"Data/Img/Tutorial/Tutorial5.png"
+	);
+	resourcesMap_.emplace(SRC::TUTORIAL_5, move(res));
 	
 #pragma endregion
 

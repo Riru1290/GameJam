@@ -80,6 +80,13 @@ public:
 		EFFECT_1,
 		EFFECT_2,
 
+		// チュートリアル
+		TUTORIAL_1,
+		TUTORIAL_2,
+		TUTORIAL_3,
+		TUTORIAL_4,
+		TUTORIAL_5,
+
 		//CSV
 		STAGE,
 

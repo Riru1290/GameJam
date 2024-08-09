@@ -19,7 +19,7 @@ void TitleScene::Update()
 {
 	auto& input = InputManager::GetInstance();
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
-		SceneMng.ChangeScene(SCENE_ID::PLAY);
+		SceneMng.ChangeScene(SCENE_ID::TUTORIAL);
 	}
 }
 

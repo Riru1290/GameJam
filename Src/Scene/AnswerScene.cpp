@@ -257,7 +257,7 @@ void AnswerScene::Result()
 
 	// Œˆ’è
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::RIGHT)) {
-		SceneMng.ChangeScene(SCENE_ID::PLAY);
+		SceneMng.ChangeScene(SCENE_ID::TUTORIAL);
 	}
 	else if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1, InputManager::JOYPAD_BTN::LEFT)) {
 		SceneMng.ChangeScene(SCENE_ID::TITLE);

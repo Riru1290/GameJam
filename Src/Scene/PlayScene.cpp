@@ -216,9 +216,7 @@ void PlayScene::Update()
 
 void PlayScene::Draw()
 {
-	if (CheckHitKey(KEY_INPUT_E)) {
-		SceneMng.ChangeScene(SCENE_ID::ANSWER);
-	}
+
 	DrawFormatString(0, 0, 0xffffff, "PlayScene");
 	DrawFormatString(0, 20, 0xffffff, "GameTime : %f", MyTimer.GetTime("GAME_TIME"));
 	DrawFormatString(0, 40, 0xffffff, "GameStartTime : %f", MyTimer.GetTime("GAME_START_TIME"));
