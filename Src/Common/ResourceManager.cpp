@@ -511,6 +511,35 @@ void ResourceManager::Init(void)
 
 #pragma region SOUND
 
+	//決定音
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Enter.crdownload"
+	);
+	resourcesMap_.emplace(SRC::ENTER_SND, move(res));
+
+	//回答
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Answer.mp3"
+	);
+	resourcesMap_.emplace(SRC::ANSWER_SND, move(res));
+
+	//アイテム取得
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Get.crdownload"
+	);
+	resourcesMap_.emplace(SRC::GET_SND, move(res));
+
+	//カーソル移動
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Move.mp3"
+	);
+	resourcesMap_.emplace(SRC::MOVE_SND, move(res));
+
+	//BGM
 	//タイトル
 	res = make_unique<Resource>(
 		Resource::TYPE::SOUND,

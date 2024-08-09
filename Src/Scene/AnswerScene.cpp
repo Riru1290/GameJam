@@ -161,6 +161,7 @@ void AnswerScene::SelectLupin()
 	// Œˆ’è
 	if (input.IsPadBtnTrgDown(InputManager::JOYPAD_NO::PAD1,InputManager::JOYPAD_BTN::RIGHT)) {
 
+		SoundManager::GetInstance().PlaySndAnswer();
 		isResult_ = true;
 
 		string filePath = "";
@@ -217,7 +218,7 @@ void AnswerScene::SelectLupin()
 	float angle = Utility::Rad2DegF(atan2f(leftY, leftX));
 
 
-
+	SoundManager::GetInstance().PlaySndMove();
 	if (angle == 0.0f) {
 		// ‰E
 		selectedNo_++;

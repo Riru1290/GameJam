@@ -85,6 +85,10 @@ public:
 		STAGE,
 
 		//Œø‰Ê‰¹
+		ENTER_SND,
+		ANSWER_SND,
+		MOVE_SND,
+		GET_SND,
 		
 		//BGM
 		TITLE_BGM,

@@ -1,4 +1,5 @@
 #include "../Utility/Fader.h"
+#include"../Common/SoundManager.h"
 #include "TitleScene.h"
 #include "PlayScene.h"
 #include "AnswerScene.h"
@@ -52,7 +53,7 @@ void SceneManager::ChangeScene(SCENE_ID sceneID)
 void SceneManager::GetApple(weak_ptr<Apple> apple)
 {
 	if (sceneID_ != SCENE_ID::PLAY)return;
-
+	SoundManager::GetInstance().PlaySndGet();
 	dynamic_pointer_cast<PlayScene>(scene_)->GetApple(apple);
 }
 
