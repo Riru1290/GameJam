@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Common\SoundManager.cpp" />
     <ClCompile Include="Src\Object\Building\Building.cpp" />
     <ClCompile Include="Src\Object\Car\Car.cpp" />
     <ClCompile Include="Src\Common\InputManager.cpp" />
@@ -61,6 +62,7 @@
     <ClCompile Include="Src\Object\Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Common\SoundManager.h" />
     <ClInclude Include="Src\Object\Building\Building.h" />
     <ClInclude Include="Src\Object\Car\Car.h" />
     <ClInclude Include="Src\Common\InputManager.h" />

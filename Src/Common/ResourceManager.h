@@ -20,6 +20,7 @@ public:
 	{
 		//画像
 		MAP_TILE,
+
 		//キャラクター
 		CHARACTER_1,
 		CHARACTER_2,
@@ -62,19 +63,19 @@ public:
 		CAR_5,
 		CAR_6,
 
-		// 建物
-		BILL_1,
-		BILL_2,
-		BILL_3,
-		BILL_4,
-		BILL_5,
-		BILL_6,
-		BILL_7,
-		BILL_8,
-		BILL_9,
-		BILL_10,
-		BILL_11,
-		BILL_12,
+		//建物
+		BILD_1,
+		BILD_2,
+		BILD_3,
+		BILD_4,
+		BILD_5,
+		BILD_6,
+		BILD_7,
+		BILD_8,
+		BILD_9,
+		BILD_10,
+		BILD_11,
+		BILD_12,
 
 		// エフェクト
 		EFFECT_1,
@@ -91,8 +92,15 @@ public:
 		STAGE,
 
 		//効果音
+		ENTER_SND,
+		ANSWER_SND,
+		MOVE_SND,
+		GET_SND,
 		
 		//BGM
+		TITLE_BGM,
+		GAME_BGM,
+		ANSWER_BGM,
 		
 		//エフェクト
 	};

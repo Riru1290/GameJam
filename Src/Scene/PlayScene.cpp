@@ -1,5 +1,6 @@
 #include "../Object/Fruit/Apple.h"
 #include"../Common/ResourceManager.h"
+#include"../Common/SoundManager.h"
 #include"../Object/CharacterBase.h"
 #include"../Object/CPUBase.h"
 #include"../Object/Player.h"
@@ -51,6 +52,9 @@ void PlayScene::Init()
 	MyTimer.SetTimer("GAME_START_TIME", 3.0f,true);
 	MyTimer.SetTimer("CAR_SPAWN_TIME", 2.0f,true);
 
+	//BGM‚ðŠJŽn
+	SoundManager::GetInstance().PlayBgmOfGame();
+
 
 	int playerNum = GetRand(charaImg_.size() - 1);
 	lupinNo_ = playerNum;
@@ -79,13 +83,160 @@ void PlayScene::Init()
 	// ƒrƒ‹
 	{
 		shared_ptr<Object> bill = make_shared<Building>(
-			Vector2F(0.0f,0.0f),
-			ResourceManager::SRC::BILL_1);
+			Vector2F(48.0f,-16.0f),
+			ResourceManager::SRC::BILD_1);
 		objects_.emplace_back(bill);
 
 		bill = make_shared<Building>(
-			Vector2F(100.0f, 100.0f),
-			ResourceManager::SRC::BILL_2);
+			Vector2F(144.0f, -16.0f),
+			ResourceManager::SRC::BILD_2);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(240.0f, -16.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(368.0f, -16.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(496.0f, -16.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(592.0f, -16.0f),
+			ResourceManager::SRC::BILD_2);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(688.0f, -16.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(816.0f, -16.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(944.0f, -16.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1040.0f, -16.0f),
+			ResourceManager::SRC::BILD_2);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1136.0f, -16.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1264.0f, -16.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+
+		bill = make_shared<Building>(
+			Vector2F(52.0f, 192.0f),
+			ResourceManager::SRC::BILD_5);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(288.0f, 176.0f),
+			ResourceManager::SRC::BILD_9);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(384.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(464.0f, 176.0f),
+			ResourceManager::SRC::BILD_8);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(544.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(760.0f, 176.0f),
+			ResourceManager::SRC::BILD_9);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(854.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(934.0f, 176.0f),
+			ResourceManager::SRC::BILD_8);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1014.0f, 176.0f),
+			ResourceManager::SRC::BILD_11);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1232.0f, 176.0f),
+			ResourceManager::SRC::BILD_10);
+		objects_.emplace_back(bill);
+
+
+		bill = make_shared<Building>(
+			Vector2F(32.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(272.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(400.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(528.0f, 432.0f),
+			ResourceManager::SRC::BILD_2);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(744.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(872.0f, 432.0f),
+			ResourceManager::SRC::BILD_4);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1000.0f, 432.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1216.0f, 432.0f),
+			ResourceManager::SRC::BILD_3);
+		objects_.emplace_back(bill);
+
+		bill = make_shared<Building>(
+			Vector2F(1312.0f, 432.0f),
+			ResourceManager::SRC::BILD_1);
 		objects_.emplace_back(bill);
 	}
 
@@ -125,6 +276,7 @@ void PlayScene::Update()
 {
 	if (MyTimer.IsEndTimer("GAME_TIME") || 
 		appleNum_ <= 0) {
+		SoundManager::GetInstance().StopBgmOfGame();
 		SceneMng.ChangeScene(SCENE_ID::ANSWER);
 		SceneMng.SetLupinNo(lupinNo_);
 	}
@@ -225,6 +377,7 @@ void PlayScene::Draw()
 	//for (auto& c : cpu_)c->Draw();
 	//player_->Draw();
 
+	stage_->Draw();
 	sort(objects_.begin(), objects_.end(), [](weak_ptr<Object> a, weak_ptr<Object> b) {
 		return a.lock()->GetFootPos() < b.lock()->GetFootPos();
 		});
@@ -237,7 +390,6 @@ void PlayScene::Draw()
 		UI->Draw();
 	}
 
-	stage_->Draw();
 }
 
 void PlayScene::Release()

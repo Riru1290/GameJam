@@ -67,75 +67,148 @@ void ResourceManager::Init(void)
 	resourcesMap_.emplace(SRC::CAR_6, move(res));
 
 	// 建物
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building1.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_1, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building2.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_2, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building3.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_3, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building4.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_4, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building5.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_5, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building6.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_6, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building7.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_7, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building8.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_8, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building9.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_9, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building10.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_10, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building11.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_11, move(res));
+
+	//res = make_unique<Resource>(
+	//	Resource::TYPE::IMG,
+	//	"Data/Img/Building/building12.png"
+	//);
+	//resourcesMap_.emplace(SRC::BILL_12, move(res));
+	
+	//建物
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building1.png"
+		"Data/Img/Bild/bild1.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_1, move(res));
+	resourcesMap_.emplace(SRC::BILD_1, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building2.png"
+		"Data/Img/Bild/bild2.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_2, move(res));
+	resourcesMap_.emplace(SRC::BILD_2, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building3.png"
+		"Data/Img/Bild/bild3.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_3, move(res));
+	resourcesMap_.emplace(SRC::BILD_3, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building4.png"
+		"Data/Img/Bild/bild4.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_4, move(res));
+	resourcesMap_.emplace(SRC::BILD_4, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building5.png"
+		"Data/Img/Bild/bild5.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_5, move(res));
+	resourcesMap_.emplace(SRC::BILD_5, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building6.png"
+		"Data/Img/Bild/bild6.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_6, move(res));
+	resourcesMap_.emplace(SRC::BILD_6, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building7.png"
+		"Data/Img/Bild/bild7.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_7, move(res));
+	resourcesMap_.emplace(SRC::BILD_7, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building8.png"
+		"Data/Img/Bild/bild8.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_8, move(res));
+	resourcesMap_.emplace(SRC::BILD_8, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building9.png"
+		"Data/Img/Bild/bild9.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_9, move(res));
+	resourcesMap_.emplace(SRC::BILD_9, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building10.png"
+		"Data/Img/Bild/bild10.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_10, move(res));
+	resourcesMap_.emplace(SRC::BILD_10, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building11.png"
+		"Data/Img/Bild/bild11.png"
 	);
-	resourcesMap_.emplace(SRC::BILL_11, move(res));
+	resourcesMap_.emplace(SRC::BILD_11, move(res));
 
 	res = make_unique<Resource>(
 		Resource::TYPE::IMG,
-		"Data/Img/Building/building12.png"
+		"Data/Img/Bild/bild12.png"
 	);
 	resourcesMap_.emplace(SRC::BILL_12, move(res));
 
@@ -422,7 +495,7 @@ void ResourceManager::Init(void)
 	//マップ
 	res = make_unique<Resource>(
 		Resource::TYPE::IMGS,
-		"Data/Image/Stage/tile.png",
+		"Data/Img/Stage/tile.png",
 		Stage::TILE_X,
 		Stage::TILE_Y,
 		Stage::TILE_SIZE,
@@ -470,6 +543,55 @@ void ResourceManager::Init(void)
 
 #pragma region SOUND
 
+	//決定音
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Enter.crdownload"
+	);
+	resourcesMap_.emplace(SRC::ENTER_SND, move(res));
+
+	//回答
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Answer.mp3"
+	);
+	resourcesMap_.emplace(SRC::ANSWER_SND, move(res));
+
+	//アイテム取得
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Get.crdownload"
+	);
+	resourcesMap_.emplace(SRC::GET_SND, move(res));
+
+	//カーソル移動
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Move.mp3"
+	);
+	resourcesMap_.emplace(SRC::MOVE_SND, move(res));
+
+	//BGM
+	//タイトル
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Title.mp3"
+	);
+	resourcesMap_.emplace(SRC::TITLE_BGM, move(res));
+
+	//ゲーム
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Think.mp3"
+	);
+	resourcesMap_.emplace(SRC::ANSWER_BGM, move(res));
+
+	//アンサー
+	res = make_unique<Resource>(
+		Resource::TYPE::SOUND,
+		"Data/Snd/Game.mp3"
+	);
+	resourcesMap_.emplace(SRC::GAME_BGM, move(res));
 	
 #pragma endregion
 }
