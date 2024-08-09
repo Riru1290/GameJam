@@ -62,6 +62,20 @@ public:
 		CAR_5,
 		CAR_6,
 
+		// 建物
+		BILL_1,
+		BILL_2,
+		BILL_3,
+		BILL_4,
+		BILL_5,
+		BILL_6,
+		BILL_7,
+		BILL_8,
+		BILL_9,
+		BILL_10,
+		BILL_11,
+		BILL_12,
+
 		// エフェクト
 		EFFECT_1,
 		EFFECT_2,
