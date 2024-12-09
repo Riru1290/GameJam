@@ -1,4 +1,4 @@
-#include"../../pch.h"
+#include "CharacterBase.h"
 #include"../Utility/Utility.h"
 #include "CharacterBase.h"
 
@@ -18,8 +18,13 @@ CharacterBase::~CharacterBase(void)
 {
 }
 
-void CharacterBase::Init(void)
+void CharacterBase::Init(int* image)
 {
+	img_ = image;
+	GetGraphSize(img_[0], &imgSize_.x, &imgSize_.y);
+	size_ = 1.0f;
+	move_ = 2.0f;
+	pos_ = Vector2F{ SCREEN_SIZE_X / 2,SCREEN_SIZE_Y / 2 };
 	SetParam();
 	//アニメーションを向いてる方向に初期化
 	animIdx_ = ANIM_NUM * static_cast<int>(dir_) + ANIM_CENTER;
@@ -31,6 +36,7 @@ void CharacterBase::Update(void)
 {
 	SetPrevPos(pos_);
 	Move();
+	MoveOut();
 	Anim();
 }
 
@@ -40,7 +46,7 @@ void CharacterBase::Draw(void)
 	//キャラクター
 	DrawRotaGraph(pos_.x,
 		pos_.y,
-		1.0f,
+		1.5f,
 		0.0 * Utility::DEG2RAD,
 		img_[animIdx_],
 		true,
@@ -147,6 +153,14 @@ void CharacterBase::ResetAnim(DIR dir)
 
 void CharacterBase::Move(void)
 {
+}
+
+void CharacterBase::MoveOut(void)
+{
+	if (pos_.x > SCREEN_SIZE_X)pos_.x = 0.0f;
+	if (pos_.x < 0.0f)pos_.x = SCREEN_SIZE_X;
+	if (pos_.y > SCREEN_SIZE_Y)pos_.y = 0.0f;
+	if (pos_.y < 0.0f)pos_.y = SCREEN_SIZE_Y;
 }
 
 void CharacterBase::SetDir(DIR dir)

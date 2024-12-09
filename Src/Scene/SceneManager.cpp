@@ -1,4 +1,7 @@
 #include "../Utility/Fader.h"
+#include"../Common/SoundManager.h"
+#include "TitleScene.h"
+#include "TutorialScene.h"
 #include "PlayScene.h"
 #include "AnswerScene.h"
 #include "SceneManager.h"
@@ -48,14 +51,21 @@ void SceneManager::ChangeScene(SCENE_ID sceneID)
 	isSceneChanging_ = true;
 }
 
+void SceneManager::GetApple(weak_ptr<Apple> apple)
+{
+	if (sceneID_ != SCENE_ID::PLAY)return;
+	SoundManager::GetInstance().PlaySndGet();
+	dynamic_pointer_cast<PlayScene>(scene_)->GetApple(apple);
+}
+
 SceneManager::SceneManager()
 {
 	fader_ = std::make_unique<Fader>();
 	fader_->Init();
 
 	// ‰ŠúƒV[ƒ“‚ÌÝ’è
-	nextSceneID_ = SCENE_ID::PLAY;
-	sceneID_ = SCENE_ID::PLAY;
+	nextSceneID_ = SCENE_ID::TITLE;
+	sceneID_ = SCENE_ID::TITLE;
 	DoChangeScene();
 }
 
@@ -71,6 +81,12 @@ void SceneManager::DoChangeScene()
 
 	switch (nextSceneID_)
 	{
+	case SCENE_ID::TITLE:
+		scene_.reset(new TitleScene());
+		break;
+	case SCENE_ID::TUTORIAL:
+		scene_.reset(new TutorialScene());
+		break;
 	case SCENE_ID::PLAY:
 		scene_.reset(new PlayScene());
 		break;
@@ -78,6 +94,7 @@ void SceneManager::DoChangeScene()
 		scene_.reset(new AnswerScene());
 		break;
 	}
+	scene_->Init();
 }
 
 void SceneManager::Fade()

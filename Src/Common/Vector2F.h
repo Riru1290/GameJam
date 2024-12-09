@@ -36,6 +36,10 @@ public:
 		x /= vec.x;
 		y /= vec.y;
 	}
+
+	// ’Ç‰Á•ª
+	Vector2F operator*(const float& vec)const { return { x * vec,y * vec }; }
+
 	//•Ï”
 	float x;
 	float y;

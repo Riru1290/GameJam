@@ -1,15 +1,33 @@
 #include "CPUBase.h"
-#include"../Common/Vector2F.h"
-#include"../Utility/Utility.h"
 
 
+CPUBase::CPUBase()
+{
+}
+
+CPUBase::~CPUBase()
+{
+}
 
 void CPUBase::SetParam(void)
 {
+	canMove_ = false;
+	waitTime_ = GetRand(WAIT_MAX);
+	waitCounter_ = 0;
+	speed_ = 2.0f;
+	moveLimit_ = MOVE_MAX;
+	DecideDir();
 }
 
 void CPUBase::Move(void)
 {
+
+	if (!canMove_)
+	{
+		waitCounter_++;
+		if (waitCounter_ > waitTime_)FinishWait();
+		return;
+	}
 	//動いてないとき方向決め
 	if (!isMove_) { DecideDir(); }
 	//動いている状態に
@@ -27,10 +45,20 @@ void CPUBase::SetIsMove(const bool flag)
 	isMove_ = flag;
 }
 
+void CPUBase::FinishWait(void)
+{
+	canMove_ = true;
+}
+
+
+
 void CPUBase::DecideDir(void)
 {
 	//スタートポジション設定
 	moveStartPos_ = pos_;
+
+	//移動量変更
+	moveLimit_ = GetRand(MOVE_MAX - MOVE_MIN) + MOVE_MIN;
 
 	//方向決め
 	dir_ = static_cast<DIR>(rand() % static_cast<int>(DIR::MAX));

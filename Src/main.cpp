@@ -7,6 +7,9 @@ int WINAPI WinMain(
 	_In_ LPSTR lpCmdLine, _In_ int nCmdShow)
 {
 
+	// Log.txtを出力しない(mainで書く)→確認したい時はtrueに
+	SetOutApplicationLogValidFlag(false);
+
 	// インスタンスの生成
 	Application::CreateInstance();
 

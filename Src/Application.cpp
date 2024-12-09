@@ -1,6 +1,9 @@
 #include <DxLib.h>
 #include <EffekseerForDXLib.h>
 #include "Scene/SceneManager.h"
+#include"Common/ResourceManager.h"
+#include"Common/InputManager.h"
+#include"Common/SoundManager.h"
 #include "Application.h"
 
 Application* Application::instance_ = nullptr;
@@ -27,11 +30,15 @@ void Application::Init(void)
 {
 
 	// アプリケーションの初期設定
-	SetWindowText("ContestBaseProject");
+	SetWindowText("LUPIN");
 
 	// ウィンドウサイズ
 	SetGraphMode(SCREEN_SIZE_X, SCREEN_SIZE_Y, 32);
+#ifdef _DEBUG
 	ChangeWindowMode(true);
+#else
+	ChangeWindowMode(false);
+#endif
 
 	// DxLibの初期化
 	SetUseDirect3DVersion(DX_DIRECT3D_11);
@@ -48,14 +55,25 @@ void Application::Init(void)
 	// キー制御初期化
 	SetUseDirectInputFlag(true);
 
+	//ResourceManagerの起動
+	ResourceManager::CreateInstance();
+
+	//SoundManagerの初期化
+	SoundManager::CreateInstance();
+
 }
 
 void Application::Run(void)
 {
+	auto& input = InputManager::GetInstance();
 
 	// ゲームループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
+		MyTimer.Run();
+
+		input.Update();
+
 		SceneMng.Execute();
 		SceneMng.Draw();
 
@@ -66,6 +84,11 @@ void Application::Run(void)
 
 void Application::Destroy(void)
 {
+	//SoundManagerを終了する
+	SoundManager::GetInstance().Relese();
+
+	//ResourceManagerを終了する
+	ResourceManager::GetInstance().Release();
 
 	// Effekseerを終了する。
 	Effkseer_End();

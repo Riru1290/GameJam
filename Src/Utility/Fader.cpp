@@ -1,4 +1,3 @@
-#include "../Application.h"
 #include "Fader.h"
 
 Fader::Fader() : 
@@ -105,8 +104,8 @@ void Fader::Draw(void)
 		SetDrawBlendMode(DX_BLENDMODE_ALPHA, (int)alpha_);
 		DrawBox(
 			0, 0,
-			Application::SCREEN_SIZE_X,
-			Application::SCREEN_SIZE_Y,
+			SCREEN_SIZE_X,
+			SCREEN_SIZE_Y,
 			0x000000, true);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
